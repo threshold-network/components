@@ -13,6 +13,7 @@ import {
   Label3,
 } from "./components/Typography"
 import { Divider, DividerIcon } from "./components/Divider"
+import { ThresholdSpinner } from "./components/ThresholdSpinner"
 
 export {
   Headline,
@@ -27,5 +28,7 @@ export {
   Label1,
   Label2,
   Label3,
+  Divider,
+  DividerIcon,
+  ThresholdSpinner,
 }
-export { Divider, DividerIcon }
