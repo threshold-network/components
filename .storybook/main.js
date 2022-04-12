@@ -1,13 +1,13 @@
 module.exports = {
-  "stories": [
+  stories: [
     "../src/stories/**/*.stories.mdx",
-    "../src/stories/**/*.stories.@(js|jsx|ts|tsx)"
+    "../src/stories/**/*.stories.@(js|jsx|ts|tsx)",
   ],
-  "addons": [
+  addons: [
     "@storybook/addon-links",
     "@storybook/addon-essentials",
     "@storybook/addon-interactions",
     "@snek-at/storybook-addon-chakra-ui",
   ],
-  "framework": "@storybook/react"
+  framework: "@storybook/react",
 }

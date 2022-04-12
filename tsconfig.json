@@ -2,11 +2,7 @@
   "compilerOptions": {
     "target": "es5",
     "outDir": "lib",
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
+    "lib": ["dom", "dom.iterable", "esnext"],
     "declaration": true,
     "declarationDir": "lib",
     "allowJs": true,
@@ -22,12 +18,6 @@
     "noEmit": true,
     "jsx": "react-jsx"
   },
-  "include": [
-    "src"
-  ],
-  "exclude": [
-    "node_modules",
-    "lib",
-    ".idea",
-  ]
+  "include": ["src"],
+  "exclude": ["node_modules", "lib", ".idea"]
 }

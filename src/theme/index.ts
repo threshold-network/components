@@ -51,8 +51,7 @@ const colors = {
 
 const index = extendTheme({
   colors,
-  components: {
-  },
+  components: {},
 })
 
 export default index
