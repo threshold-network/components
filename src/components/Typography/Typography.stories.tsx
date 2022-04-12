@@ -1,16 +1,6 @@
 import { Meta, Story } from "@storybook/react"
 import { Box } from "@chakra-ui/react"
-import {
-  Body1,
-  Body2,
-  Body3,
-  H1,
-  H2,
-  H3,
-  H4,
-  H5,
-  Headline,
-} from "../components/Typography"
+import { Body1, Body2, Body3, H1, H2, H3, H4, H5, Headline } from "./index"
 
 const Template: Story = () => {
   return (
