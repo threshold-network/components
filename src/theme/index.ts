@@ -1,4 +1,11 @@
 import { extendTheme, theme } from "@chakra-ui/react"
+import { Button } from "./Button"
+import { Badge } from "./Badge"
+import { Alert } from "./Alert"
+import { Divider } from "./Divider"
+import { Card } from "./Card"
+import { Progress } from "./Progress"
+import { InfoBox } from "./InfoBox"
 
 const colors = {
   brand: {
@@ -51,7 +58,15 @@ const colors = {
 
 const index = extendTheme({
   colors,
-  components: {},
+  components: {
+    Alert,
+    Button,
+    Badge,
+    Card,
+    Divider,
+    Progress,
+    InfoBox,
+  },
 })
 
 export default index

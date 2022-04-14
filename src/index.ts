@@ -15,6 +15,7 @@ import {
 import { Divider, DividerIcon } from "./components/Divider"
 import { ThresholdSpinner } from "./components/ThresholdSpinner"
 
+export * from "@chakra-ui/react"
 export {
   Headline,
   H1,
@@ -32,4 +33,3 @@ export {
   DividerIcon,
   ThresholdSpinner,
 }
-export * from "@chakra-ui/react"
