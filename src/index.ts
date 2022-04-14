@@ -14,9 +14,22 @@ import {
 } from "./components/Typography"
 import { Divider, DividerIcon } from "./components/Divider"
 import { ThresholdSpinner } from "./components/ThresholdSpinner"
+import BoxLabel from "./components/BoxLabel"
+import Card from "./components/Card"
+import ChecklistGroup from "./components/CheckListGroup"
+import ChecklistItem from "./components/ChecklistItem"
+import InfoBox from "./components/InfoBox"
 
 export * from "@chakra-ui/react"
 export {
+  BoxLabel,
+  Card,
+  ChecklistGroup,
+  ChecklistItem,
+  Divider,
+  DividerIcon,
+  InfoBox,
+  ThresholdSpinner,
   Headline,
   H1,
   H2,
@@ -29,7 +42,4 @@ export {
   Label1,
   Label2,
   Label3,
-  Divider,
-  DividerIcon,
-  ThresholdSpinner,
 }
