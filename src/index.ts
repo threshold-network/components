@@ -19,6 +19,7 @@ import Card from "./components/Card"
 import ChecklistGroup from "./components/CheckListGroup"
 import ChecklistItem from "./components/ChecklistItem"
 import InfoBox from "./components/InfoBox"
+import MultiSegmentProgress from "./components/MultiSegmentProgress"
 import NumberInput from "./components/NumberInput"
 
 export * from "@chakra-ui/react"
@@ -30,6 +31,7 @@ export {
   Divider,
   DividerIcon,
   InfoBox,
+  MultiSegmentProgress,
   NumberInput,
   ThresholdSpinner,
   Headline,
