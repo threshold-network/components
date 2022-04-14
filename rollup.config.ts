@@ -24,7 +24,11 @@ export default {
     peerDepsExternal(),
     resolve(),
     commonjs(),
-    typescript({ useTsconfigDeclarationDir: true }),
+    typescript({
+      useTsconfigDeclarationDir: true,
+      rollupCommonJSResolveHack: false,
+      clean: true,
+    }),
     postcss({
       extensions: [".css"],
     }),

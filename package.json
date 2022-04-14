@@ -5,6 +5,10 @@
   "main": "lib/index.ts",
   "module": "lib/index.esm.js",
   "types": "lib/index.d.ts",
+  "files": [
+    "lib",
+    "src"
+  ],
   "license": "MIT",
   "devDependencies": {
     "@babel/core": "^7.17.9",

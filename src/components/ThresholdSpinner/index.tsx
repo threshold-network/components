@@ -1,9 +1,10 @@
 import { Flex, Icon, Spinner as ChakraSpinner } from "@chakra-ui/react"
 import Threshold from "../../static/icons/Ttoken"
+import { FC } from "react"
 
 // Maybe we should build this component in Chakra way and make it more
 // reusable.
-export const ThresholdSpinner = () => {
+export const ThresholdSpinner: FC = () => {
   return (
     <Flex position="relative" alignItems="center" justifyContent="center">
       <ChakraSpinner
