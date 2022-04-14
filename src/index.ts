@@ -47,3 +47,4 @@ export {
   Label2,
   Label3,
 }
+export * as Type from "./types"
