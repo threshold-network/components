@@ -1,6 +1,5 @@
 import { Meta, Story } from "@storybook/react"
 import MultiSegmentProgressComponent from "./index"
-import { StackProps } from "@chakra-ui/react"
 import { MultiSegmentProgressProps } from "../../types"
 
 const Template: Story<MultiSegmentProgressProps> = (args) => {
