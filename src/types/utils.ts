@@ -8,13 +8,3 @@ export interface IconMap {
 export interface ChakraIconMap {
   [key: string]: ReturnType<typeof createIcon>
 }
-
-export interface ChecklistGroupProps {
-  checklistItems: ChecklistItemProps[]
-  title?: string
-}
-
-export interface ChecklistItemProps {
-  title: string | JSX.Element
-  subTitle?: string | JSX.Element
-}

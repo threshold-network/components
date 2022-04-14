@@ -1,6 +1,5 @@
 import { Meta, Story } from "@storybook/react"
 import InfoBoxComponent from "./index"
-import { ChecklistGroupProps } from "../../types"
 import { StackProps } from "@chakra-ui/react"
 
 const Template: Story<{ text?: string; variant?: any } & StackProps> = (
