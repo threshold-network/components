@@ -3,7 +3,7 @@ import { mode } from "@chakra-ui/theme-tools"
 const baseIconSize = 18
 const mdIconSize = 24
 
-export const Divider = {
+export const LineDivider = {
   parts: ["dividerWrapper", "divider", "icon"],
   baseStyle: (props: any) => {
     return {

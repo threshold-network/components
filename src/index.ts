@@ -12,7 +12,7 @@ import {
   Label2,
   Label3,
 } from "./components/Typography"
-import { Divider, DividerIcon } from "./components/Divider"
+import { LineDivider, LineDividerIcon } from "./components/LineDivider"
 import { ThresholdSpinner } from "./components/ThresholdSpinner"
 import BoxLabel from "./components/BoxLabel"
 import Card from "./components/Card"
@@ -28,8 +28,8 @@ export {
   Card,
   ChecklistGroup,
   ChecklistItem,
-  Divider,
-  DividerIcon,
+  LineDivider,
+  LineDividerIcon,
   InfoBox,
   MultiSegmentProgress,
   NumberInput,

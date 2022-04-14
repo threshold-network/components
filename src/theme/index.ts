@@ -2,7 +2,7 @@ import { extendTheme, theme } from "@chakra-ui/react"
 import { Button } from "./Button"
 import { Badge } from "./Badge"
 import { Alert } from "./Alert"
-import { Divider } from "./Divider"
+import { LineDivider } from "./LineDivider"
 import { Card } from "./Card"
 import { Progress } from "./Progress"
 import { InfoBox } from "./InfoBox"
@@ -63,7 +63,7 @@ const index = extendTheme({
     Button,
     Badge,
     Card,
-    Divider,
+    LineDivider,
     Progress,
     InfoBox,
   },

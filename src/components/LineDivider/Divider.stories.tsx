@@ -1,7 +1,7 @@
 import React from "react"
 import { Story, Meta } from "@storybook/react"
 import { DividerProps, Container, Text } from "@chakra-ui/react"
-import { Divider as TDivider, DividerIcon } from "../Divider"
+import { LineDivider as LineDividerComponent, LineDividerIcon } from "./"
 import {
   FaArrowCircleDown,
   FaArrowCircleUp,
@@ -9,32 +9,32 @@ import {
 } from "react-icons/all"
 import { IconMap } from "../../types"
 
-interface DividerStoryProps extends Omit<DividerProps, "orientation"> {
+interface LineDividerStoryProps extends Omit<DividerProps, "orientation"> {
   children: string | undefined
 }
 
 const iconMap: IconMap = {
-  ArrowDown: <DividerIcon as={FaArrowCircleDown} />,
-  ArrowUp: <DividerIcon as={FaArrowCircleUp} />,
-  Alert: <DividerIcon as={FiAlertCircle} />,
+  ArrowDown: <LineDividerIcon as={FaArrowCircleDown} />,
+  ArrowUp: <LineDividerIcon as={FaArrowCircleUp} />,
+  Alert: <LineDividerIcon as={FiAlertCircle} />,
 }
 
-const Template: Story<DividerStoryProps> = ({ children }) => {
+const Template: Story<LineDividerStoryProps> = ({ children }) => {
   const icon = children ? iconMap[children] : undefined
   return (
     <Container>
       <Text>Above the divider</Text>
-      <TDivider>{icon}</TDivider>
+      <LineDividerComponent>{icon}</LineDividerComponent>
       <Text>Below the divider</Text>
     </Container>
   )
 }
 
-export const Divider = Template.bind({})
+export const LineDivider = Template.bind({})
 
 export default {
-  title: "Divider",
-  component: Divider,
+  title: "LineDivider",
+  component: LineDivider,
   argTypes: {
     children: {
       description:
