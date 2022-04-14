@@ -1,4 +1,4 @@
-import { ProgressProps } from "@chakra-ui/react"
+import { InputProps, ProgressProps } from "@chakra-ui/react"
 
 export interface ChecklistGroupProps {
   checklistItems: ChecklistItemProps[]
@@ -16,4 +16,14 @@ export interface MultiSegmentProgressProps extends ProgressProps {
     value: number
     tooltip?: string
   }[]
+}
+
+export interface NumberInputValues {
+  formattedValue: string
+  value: string
+  floatValue: number
+}
+
+export interface NumberInputProps extends InputProps {
+  onValueChange: (values: NumberInputValues) => void
 }

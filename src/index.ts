@@ -19,6 +19,7 @@ import Card from "./components/Card"
 import ChecklistGroup from "./components/CheckListGroup"
 import ChecklistItem from "./components/ChecklistItem"
 import InfoBox from "./components/InfoBox"
+import NumberInput from "./components/NumberInput"
 
 export * from "@chakra-ui/react"
 export {
@@ -29,6 +30,7 @@ export {
   Divider,
   DividerIcon,
   InfoBox,
+  NumberInput,
   ThresholdSpinner,
   Headline,
   H1,
