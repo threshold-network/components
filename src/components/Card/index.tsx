@@ -2,7 +2,7 @@ import { Box, BoxProps, useStyleConfig } from "@chakra-ui/react"
 import { FC } from "react"
 
 const Card: FC<BoxProps> = (props) => {
-  const styles = useStyleConfig("Card")
+  const styles = useStyleConfig("Card", props)
   return <Box __css={styles} {...props} />
 }
 
