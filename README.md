@@ -28,6 +28,13 @@ After that you just run:
 
 `yarn`
 
-in the second project and that's it! You can now use the threshold network components by simply importing them. For example:
+in the second project and that's it! You can now use the threshold network components by simply importing them. For 
+example:
 
 `import { H1 } from "@threshold-network/components"`
+
+####Note
+
+After executing `yarn pack` yarn caches the package so any changes made will not be saved after re-doing `yarn pack` 
+until you clean the yarn cache (`yarn cache clean`) or just change the name of the packed file (by changing the version 
+in `package.json` for example)
