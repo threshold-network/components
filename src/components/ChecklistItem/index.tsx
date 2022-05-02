@@ -10,7 +10,11 @@ import { BsCheckCircleFill } from "react-icons/all"
 import { Body2, Body3 } from "../Typography"
 import { ChecklistItemProps } from "../../types"
 
-const ChecklistItem: FC<ChecklistItemProps> = ({ title, subTitle }) => {
+const ChecklistItem: FC<ChecklistItemProps> = ({
+  title,
+  subTitle,
+  icon = BsCheckCircleFill,
+}) => {
   return (
     <ListItem>
       <Stack direction="row">
@@ -18,7 +22,7 @@ const ChecklistItem: FC<ChecklistItemProps> = ({ title, subTitle }) => {
           mt="2px"
           height="22px"
           width="22px"
-          as={BsCheckCircleFill}
+          as={icon}
           color="green.500"
         />
         <Box>

@@ -1,4 +1,5 @@
 import { InputProps, ProgressProps } from "@chakra-ui/react"
+import { IconType } from "react-icons"
 
 export interface ChecklistGroupProps {
   checklistItems: ChecklistItemProps[]
@@ -8,6 +9,7 @@ export interface ChecklistGroupProps {
 export interface ChecklistItemProps {
   title: string | JSX.Element
   subTitle?: string | JSX.Element
+  icon?: IconType
 }
 
 export interface MultiSegmentProgressProps extends ProgressProps {
