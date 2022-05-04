@@ -7,6 +7,7 @@ import { Card } from "./Card"
 import { Progress } from "./Progress"
 import { CheckListItem } from "./CheckListItem"
 import { CheckListGroup } from "./CheckListGroup"
+import { IconSpinner } from "./IconSpinner"
 
 const colors = {
   brand: {
@@ -66,6 +67,7 @@ const index = extendTheme({
     Card,
     CheckListGroup,
     CheckListItem,
+    IconSpinner,
     LineDivider,
     Progress,
   },

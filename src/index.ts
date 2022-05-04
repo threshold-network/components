@@ -13,7 +13,7 @@ import {
   Label3,
 } from "./components/Typography"
 import { LineDivider, LineDividerIcon } from "./components/LineDivider"
-import { ThresholdSpinner } from "./components/ThresholdSpinner"
+import { IconSpinner } from "./components/IconSpinner"
 import BoxLabel from "./components/BoxLabel"
 import Card from "./components/Card"
 import ChecklistGroup from "./components/CheckListGroup"
@@ -31,7 +31,7 @@ export {
   LineDividerIcon,
   MultiSegmentProgress,
   NumberInput,
-  ThresholdSpinner,
+  IconSpinner,
   Headline,
   H1,
   H2,
