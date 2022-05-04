@@ -5,20 +5,21 @@ import {
   ListIcon,
   ListItem,
   useMultiStyleConfig,
+  ListItemProps,
 } from "@chakra-ui/react"
 import { BsCheckCircleFill } from "react-icons/all"
 import { Body2, Body3 } from "../Typography"
 import { IconType } from "react-icons"
 
-export interface CheckListItemProps {
-  title: string | JSX.Element
-  subTitle?: string | JSX.Element
+export interface CheckListItemProps extends ListItemProps {
+  itemTitle: string | JSX.Element
+  itemSubTitle?: string | JSX.Element
   icon?: IconType
 }
 
 const ChecklistItem: FC<CheckListItemProps> = ({
-  title,
-  subTitle,
+  itemTitle,
+  itemSubTitle,
   icon = BsCheckCircleFill,
   ...restProps
 }) => {
@@ -28,15 +29,15 @@ const ChecklistItem: FC<CheckListItemProps> = ({
       <Stack direction="row">
         <ListIcon sx={styles.icon} as={icon} mt={10} />
         <Box>
-          {typeof title === "string" ? (
-            <Body2 __css={styles.title}>{title}</Body2>
+          {typeof itemTitle === "string" ? (
+            <Body2 __css={styles.title}>{itemTitle}</Body2>
           ) : (
-            title
+            itemTitle
           )}
-          {typeof subTitle === "string" ? (
-            <Body3 sx={styles.subtitle}>{subTitle}</Body3>
+          {typeof itemSubTitle === "string" ? (
+            <Body3 sx={styles.subtitle}>{itemSubTitle}</Body3>
           ) : (
-            subTitle
+            itemSubTitle
           )}
         </Box>
       </Stack>

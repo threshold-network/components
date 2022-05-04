@@ -12,8 +12,8 @@ const Template: Story<CheckListItemProps> = (args) => {
 
 export const CheckListItem = Template.bind({})
 CheckListItem.args = {
-  title: "Check list item 1",
-  subTitle: "subtitle",
+  itemTitle: "Check list item 1",
+  itemSubTitle: "subtitle",
 }
 
 export default {
