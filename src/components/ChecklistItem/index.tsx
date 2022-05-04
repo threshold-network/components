@@ -4,7 +4,7 @@ import {
   Stack,
   ListIcon,
   ListItem,
-  useColorModeValue,
+  useMultiStyleConfig,
 } from "@chakra-ui/react"
 import { BsCheckCircleFill } from "react-icons/all"
 import { Body2, Body3 } from "../Typography"
@@ -15,28 +15,19 @@ const ChecklistItem: FC<ChecklistItemProps> = ({
   subTitle,
   icon = BsCheckCircleFill,
 }) => {
+  const styles = useMultiStyleConfig("CheckListItem", {})
   return (
-    <ListItem>
+    <ListItem __css={styles.checkListItemWrapper}>
       <Stack direction="row">
-        <ListIcon
-          mt="2px"
-          height="22px"
-          width="22px"
-          as={icon}
-          color="green.500"
-        />
+        <ListIcon sx={styles.icon} as={icon} />
         <Box>
           {typeof title === "string" ? (
-            <Body2 color={useColorModeValue("gray.700", "white")}>
-              {title}
-            </Body2>
+            <Body2 sx={styles.title}>{title}</Body2>
           ) : (
             title
           )}
           {typeof subTitle === "string" ? (
-            <Body3 color={useColorModeValue("gray.500", "gray.300")}>
-              {subTitle}
-            </Body3>
+            <Body3 sx={styles.subtitle}>{subTitle}</Body3>
           ) : (
             subTitle
           )}
