@@ -7,6 +7,7 @@ import { Card } from "./Card"
 import { Progress } from "./Progress"
 import { InfoBox } from "./InfoBox"
 import { CheckListItem } from "./CheckListItem"
+import { CheckListGroup } from "./CheckListGroup"
 
 const colors = {
   brand: {
@@ -64,6 +65,7 @@ const index = extendTheme({
     Button,
     Badge,
     Card,
+    CheckListGroup,
     CheckListItem,
     LineDivider,
     Progress,

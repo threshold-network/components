@@ -20,15 +20,16 @@ const ChecklistItem: FC<CheckListItemProps> = ({
   title,
   subTitle,
   icon = BsCheckCircleFill,
+  ...restProps
 }) => {
   const styles = useMultiStyleConfig("CheckListItem", {})
   return (
-    <ListItem __css={styles.checkListItemWrapper}>
+    <ListItem __css={styles.checkListItemWrapper} {...restProps}>
       <Stack direction="row">
-        <ListIcon sx={styles.icon} as={icon} />
+        <ListIcon sx={styles.icon} as={icon} mt={10} />
         <Box>
           {typeof title === "string" ? (
-            <Body2 sx={styles.title}>{title}</Body2>
+            <Body2 __css={styles.title}>{title}</Body2>
           ) : (
             title
           )}

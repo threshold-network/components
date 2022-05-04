@@ -3,7 +3,6 @@ import { mode } from "@chakra-ui/theme-tools"
 export const CheckListItem = {
   parts: ["checkListItemWrapper", "icon", "title", "subtitle"],
   baseStyle: (props: any) => {
-    console.log("props", props)
     return {
       icon: {
         marginTop: "2px",
@@ -12,7 +11,7 @@ export const CheckListItem = {
         color: "green.500",
       },
       title: {
-        color: mode("gray.700", "white")(props),
+        color: mode("blue", "red")(props),
       },
       subtitle: {
         color: mode("gray.500", "gray.300")(props),

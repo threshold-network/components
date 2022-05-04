@@ -1,5 +1,5 @@
 import { FC } from "react"
-import { List } from "@chakra-ui/react"
+import { List, useStyleConfig } from "@chakra-ui/react"
 import ChecklistItem, { CheckListItemProps } from "../ChecklistItem"
 import BoxLabel from "../BoxLabel"
 
@@ -9,13 +9,11 @@ export interface CheckListGroupProps {
 }
 
 const ChecklistGroup: FC<CheckListGroupProps> = ({ checklistItems, title }) => {
+  const styles = useStyleConfig("CheckListGroup", {})
+
   return (
     <>
-      {title && (
-        <BoxLabel w="fit-content" mb={4}>
-          {title}
-        </BoxLabel>
-      )}
+      {title && <BoxLabel sx={styles}>{title}</BoxLabel>}
       <List spacing={4}>
         {checklistItems.map((item, i) => (
           <ChecklistItem {...item} key={i} />
