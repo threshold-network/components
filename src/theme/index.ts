@@ -5,7 +5,6 @@ import { Alert } from "./Alert"
 import { LineDivider } from "./LineDivider"
 import { Card } from "./Card"
 import { Progress } from "./Progress"
-import { InfoBox } from "./InfoBox"
 import { CheckListItem } from "./CheckListItem"
 import { CheckListGroup } from "./CheckListGroup"
 
@@ -69,7 +68,6 @@ const index = extendTheme({
     CheckListItem,
     LineDivider,
     Progress,
-    InfoBox,
   },
 })
 
