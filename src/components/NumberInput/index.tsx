@@ -1,9 +1,18 @@
 import ReactNumberFormat from "react-number-format"
-import { chakra, useMultiStyleConfig } from "@chakra-ui/react"
+import { chakra, InputProps, useMultiStyleConfig } from "@chakra-ui/react"
 import { FC } from "react"
-import { NumberInputProps } from "../../types"
 
 const ChakraWrapper = chakra(ReactNumberFormat)
+
+interface NumberInputValues {
+  formattedValue: string
+  value: string
+  floatValue: number
+}
+
+export interface NumberInputProps extends InputProps {
+  onValueChange: (values: NumberInputValues) => void
+}
 
 const NumberInput: FC<NumberInputProps> = (props) => {
   const { field: css } = useMultiStyleConfig("Input", props)

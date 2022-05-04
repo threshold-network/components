@@ -1,9 +1,8 @@
 import { Meta, Story } from "@storybook/react"
-import CheckListItemComponent from "./index"
-import { ChecklistItemProps } from "../../types"
+import CheckListItemComponent, { CheckListItemProps } from "./index"
 import { List } from "@chakra-ui/react"
 
-const Template: Story<ChecklistItemProps> = (args) => {
+const Template: Story<CheckListItemProps> = (args) => {
   return (
     <List spacing={4}>
       <CheckListItemComponent {...args} />

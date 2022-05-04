@@ -1,6 +1,7 @@
 import { Meta, Story } from "@storybook/react"
-import MultiSegmentProgressComponent from "./index"
-import { MultiSegmentProgressProps } from "../../types"
+import MultiSegmentProgressComponent, {
+  MultiSegmentProgressProps,
+} from "./index"
 
 const Template: Story<MultiSegmentProgressProps> = (args) => {
   return <MultiSegmentProgressComponent {...args} />

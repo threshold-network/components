@@ -8,9 +8,15 @@ import {
 } from "@chakra-ui/react"
 import { BsCheckCircleFill } from "react-icons/all"
 import { Body2, Body3 } from "../Typography"
-import { ChecklistItemProps } from "../../types"
+import { IconType } from "react-icons"
 
-const ChecklistItem: FC<ChecklistItemProps> = ({
+export interface CheckListItemProps {
+  title: string | JSX.Element
+  subTitle?: string | JSX.Element
+  icon?: IconType
+}
+
+const ChecklistItem: FC<CheckListItemProps> = ({
   title,
   subTitle,
   icon = BsCheckCircleFill,

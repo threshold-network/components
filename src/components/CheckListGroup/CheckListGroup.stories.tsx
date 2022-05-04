@@ -1,8 +1,7 @@
 import { Meta, Story } from "@storybook/react"
-import CheckListGroupComponent from "./index"
-import { ChecklistGroupProps } from "../../types"
+import CheckListGroupComponent, { CheckListGroupProps } from "./index"
 
-const Template: Story<ChecklistGroupProps> = (args) => {
+const Template: Story<CheckListGroupProps> = (args) => {
   return <CheckListGroupComponent {...args} />
 }
 

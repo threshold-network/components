@@ -1,10 +1,14 @@
 import { FC } from "react"
 import { List } from "@chakra-ui/react"
-import ChecklistItem from "../ChecklistItem"
+import ChecklistItem, { CheckListItemProps } from "../ChecklistItem"
 import BoxLabel from "../BoxLabel"
-import { ChecklistGroupProps } from "../../types"
 
-const ChecklistGroup: FC<ChecklistGroupProps> = ({ checklistItems, title }) => {
+export interface CheckListGroupProps {
+  checklistItems: CheckListItemProps[]
+  title?: string
+}
+
+const ChecklistGroup: FC<CheckListGroupProps> = ({ checklistItems, title }) => {
   return (
     <>
       {title && (

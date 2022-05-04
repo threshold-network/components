@@ -1,6 +1,13 @@
 import { FC } from "react"
 import { Box, Progress, ProgressProps, Tooltip } from "@chakra-ui/react"
-import { MultiSegmentProgressProps } from "../../types"
+
+export interface MultiSegmentProgressProps extends ProgressProps {
+  values: {
+    color: string
+    value: number
+    tooltip?: string
+  }[]
+}
 
 const MultiSegmentProgress: FC<MultiSegmentProgressProps> = ({ values }) => {
   return (
