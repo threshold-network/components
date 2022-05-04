@@ -11,7 +11,9 @@ import { BsCheckCircleFill } from "react-icons/all"
 import { Body2, Body3 } from "../Typography"
 import { IconType } from "react-icons"
 
-export interface CheckListItemProps extends ListItemProps {
+export interface CheckListItemProps
+  extends Omit<ListItemProps, "id" | "title"> {
+  itemId: string
   itemTitle: string | JSX.Element
   itemSubTitle?: string | JSX.Element
   icon?: IconType

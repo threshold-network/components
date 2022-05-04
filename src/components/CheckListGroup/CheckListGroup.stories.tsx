@@ -10,10 +10,12 @@ CheckListGroup.args = {
   title: "Awesome checklist",
   checklistItems: [
     {
+      itemId: "list-1",
       itemTitle: "Check list item 1",
       itemSubTitle: "subtitle",
     },
     {
+      itemId: "list-2",
       itemTitle: "Check list item 2",
       itemSubTitle: "subtitle",
     },

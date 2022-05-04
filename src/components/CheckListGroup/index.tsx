@@ -20,7 +20,7 @@ const ChecklistGroup: FC<CheckListGroupProps> = ({
       {title && <BoxLabel sx={styles}>{title}</BoxLabel>}
       <List spacing={4} {...restProps}>
         {checklistItems.map((item, i) => (
-          <ChecklistItem {...item} key={i} />
+          <ChecklistItem {...item} key={item.itemId} />
         ))}
       </List>
     </>
