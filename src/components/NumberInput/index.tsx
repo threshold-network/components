@@ -10,11 +10,11 @@ interface NumberInputValues {
   floatValue: number
 }
 
-export interface NumberInputProps extends InputProps {
+export interface CustomNumberInputProps extends InputProps {
   onValueChange: (values: NumberInputValues) => void
 }
 
-const NumberInput: FC<NumberInputProps> = (props) => {
+const NumberInput: FC<CustomNumberInputProps> = (props) => {
   const { field: css } = useMultiStyleConfig("Input", props)
 
   return (

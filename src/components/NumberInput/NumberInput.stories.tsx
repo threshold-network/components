@@ -1,7 +1,7 @@
 import { Meta, Story } from "@storybook/react"
-import NumberInputComponent, { NumberInputProps } from "./index"
+import NumberInputComponent, { CustomNumberInputProps } from "./index"
 
-const Template: Story<NumberInputProps> = (args) => {
+const Template: Story<CustomNumberInputProps> = (args) => {
   return <NumberInputComponent {...args} />
 }
 
