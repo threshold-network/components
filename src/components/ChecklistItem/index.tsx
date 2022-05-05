@@ -8,7 +8,7 @@ import {
   ListItemProps,
 } from "@chakra-ui/react"
 import { BsCheckCircleFill } from "react-icons/all"
-import { Body2, Body3 } from "../Typography"
+import { BodyMd, BodySm } from "../Typography"
 import { IconType } from "react-icons"
 
 export interface CheckListItemProps
@@ -32,12 +32,12 @@ const ChecklistItem: FC<CheckListItemProps> = ({
         <ListIcon sx={styles.icon} as={icon} mt={10} />
         <Box>
           {typeof itemTitle === "string" ? (
-            <Body2 __css={styles.title}>{itemTitle}</Body2>
+            <BodyMd __css={styles.title}>{itemTitle}</BodyMd>
           ) : (
             itemTitle
           )}
           {typeof itemSubTitle === "string" ? (
-            <Body3 sx={styles.subtitle}>{itemSubTitle}</Body3>
+            <BodySm sx={styles.subtitle}>{itemSubTitle}</BodySm>
           ) : (
             itemSubTitle
           )}

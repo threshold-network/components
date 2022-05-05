@@ -1,9 +1,9 @@
 import { FC } from "react"
 import { TextProps, useColorModeValue } from "@chakra-ui/react"
-import { Body3 } from "../Typography"
+import { BodySm } from "../Typography"
 
 const BoxLabel: FC<TextProps> = (props) => (
-  <Body3
+  <BodySm
     borderRadius="md"
     px={2}
     py={1}
@@ -11,7 +11,7 @@ const BoxLabel: FC<TextProps> = (props) => (
     {...props}
   >
     {props.children}
-  </Body3>
+  </BodySm>
 )
 
 export default BoxLabel

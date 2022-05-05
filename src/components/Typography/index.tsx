@@ -78,7 +78,7 @@ export const H5: FC<TextProps> = (props) => {
   )
 }
 
-export const Body1: FC<TextProps> = (props) => {
+export const BodyLg: FC<TextProps> = (props) => {
   return (
     <Text
       as="p"
@@ -90,7 +90,7 @@ export const Body1: FC<TextProps> = (props) => {
   )
 }
 
-export const Body2: FC<TextProps> = (props) => {
+export const BodyMd: FC<TextProps> = (props) => {
   return (
     <Text
       as="p"
@@ -102,7 +102,7 @@ export const Body2: FC<TextProps> = (props) => {
   )
 }
 
-export const Body3: FC<TextProps> = (props) => {
+export const BodySm: FC<TextProps> = (props) => {
   return (
     <Text
       as="p"
@@ -114,7 +114,7 @@ export const Body3: FC<TextProps> = (props) => {
   )
 }
 
-export const Label1: FC<TextProps> = (props) => {
+export const LabelLg: FC<TextProps> = (props) => {
   return (
     <Text
       fontWeight={600}
@@ -127,7 +127,7 @@ export const Label1: FC<TextProps> = (props) => {
   )
 }
 
-export const Label2: FC<TextProps> = (props) => {
+export const LabelMd: FC<TextProps> = (props) => {
   return (
     <Text
       fontWeight={600}
@@ -140,7 +140,7 @@ export const Label2: FC<TextProps> = (props) => {
   )
 }
 
-export const Label3: FC<TextProps> = (props) => {
+export const LabelSm: FC<TextProps> = (props) => {
   return (
     <Text
       fontWeight={600}
