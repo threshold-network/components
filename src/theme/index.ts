@@ -8,6 +8,7 @@ import { Progress } from "./Progress"
 import { CheckListItem } from "./CheckListItem"
 import { CheckListGroup } from "./CheckListGroup"
 import { IconSpinner } from "./IconSpinner"
+import { fonts } from "./fonts"
 
 const colors = {
   brand: {
@@ -59,6 +60,7 @@ const colors = {
 }
 
 const index = extendTheme({
+  fonts,
   colors,
   components: {
     Alert,
