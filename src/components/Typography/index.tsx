@@ -111,6 +111,19 @@ export const BodySm: FC<TextProps> = (props) => {
   )
 }
 
+export const BodyXs: FC<TextProps> = (props) => {
+  return (
+    <Text
+      as="p"
+      fontWeight="400"
+      fontSize="12px"
+      lineHeight="16px"
+      color={useColorModeValue("gray.700", "gray.300")}
+      {...props}
+    />
+  )
+}
+
 export const LabelLg: FC<TextProps> = (props) => {
   return (
     <Text
@@ -145,6 +158,20 @@ export const LabelSm: FC<TextProps> = (props) => {
       fontWeight="600"
       fontSize="14px"
       lineHeight="16px"
+      letterSpacing="0.075em"
+      textTransform="uppercase"
+      color={useColorModeValue("gray.700", "gray.300")}
+      {...props}
+    />
+  )
+}
+
+export const LabelXs: FC<TextProps> = (props) => {
+  return (
+    <Text
+      fontWeight="500"
+      fontSize="10px"
+      lineHeight="12px"
       letterSpacing="0.075em"
       textTransform="uppercase"
       color={useColorModeValue("gray.700", "gray.300")}
