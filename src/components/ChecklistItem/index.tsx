@@ -32,7 +32,7 @@ const ChecklistItem: FC<CheckListItemProps> = ({
         <ListIcon sx={styles.icon} as={icon} mt={10} />
         <Box>
           {typeof itemTitle === "string" ? (
-            <BodyMd __css={styles.title}>{itemTitle}</BodyMd>
+            <BodyMd sx={styles.title}>{itemTitle}</BodyMd>
           ) : (
             itemTitle
           )}
