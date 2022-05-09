@@ -11,7 +11,7 @@ export const CheckListItem = {
         color: "green.500",
       },
       title: {
-        color: mode("blue", "red")(props),
+        color: mode("gray.700", "white")(props),
       },
       subtitle: {
         color: mode("gray.500", "gray.300")(props),
