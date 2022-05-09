@@ -34,7 +34,7 @@ export const ChecklistItem: FC<ChecklistItemProps> = ({
       {...restProps}
     >
       <Stack direction="row">
-        <ListIcon sx={styles.icon} as={icon} mt={10} />
+        <ListIcon sx={styles.icon} as={icon} />
         <Box>
           {typeof itemTitle === "string" ? (
             <BodyMd sx={styles.title}>{itemTitle}</BodyMd>
