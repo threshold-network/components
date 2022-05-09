@@ -59,7 +59,7 @@ const colors = {
   },
 }
 
-const index = extendTheme({
+export const defaultTheme = {
   fonts,
   colors,
   components: {
@@ -73,6 +73,10 @@ const index = extendTheme({
     LineDivider,
     Progress,
   },
+}
+
+const index = extendTheme({
+  defaultTheme,
 })
 
 export default index
