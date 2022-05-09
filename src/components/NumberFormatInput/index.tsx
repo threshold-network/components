@@ -12,6 +12,7 @@ export interface NumberFormatInputValues {
 
 export interface NumberFormatInputProps extends InputProps {
   onValueChange: (values: NumberFormatInputValues) => void
+  decimalScale?: number
 }
 
 export const NumberFormatInput: FC<NumberFormatInputProps> = (props) => {
@@ -22,6 +23,7 @@ export const NumberFormatInput: FC<NumberFormatInputProps> = (props) => {
     <ChakraWrapper
       allowLeadingZeros={false}
       thousandSeparator
+      decimalScale={props.decimalScale}
       __css={css}
       {...props}
       disabled={props.isDisabled}
