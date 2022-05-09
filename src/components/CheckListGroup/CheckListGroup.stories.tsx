@@ -1,28 +1,31 @@
 import { Meta, Story } from "@storybook/react"
-import CheckListGroupComponent, { CheckListGroupProps } from "./index"
+import {
+  ChecklistGroup as ChecklistGroupComponent,
+  ChecklistGroupProps,
+} from "./index"
 
-const Template: Story<CheckListGroupProps> = (args) => {
-  return <CheckListGroupComponent {...args} />
+const Template: Story<ChecklistGroupProps> = (args) => {
+  return <ChecklistGroupComponent {...args} />
 }
 
-export const CheckListGroup = Template.bind({})
-CheckListGroup.args = {
+export const ChecklistGroup = Template.bind({})
+ChecklistGroup.args = {
   title: "Awesome checklist",
   checklistItems: [
     {
       itemId: "list-1",
-      itemTitle: "Check list item 1",
+      itemTitle: "Checklist item 1",
       itemSubTitle: "subtitle",
     },
     {
       itemId: "list-2",
-      itemTitle: "Check list item 2",
+      itemTitle: "Checklist item 2",
       itemSubTitle: "subtitle",
     },
   ],
 }
 
 export default {
-  title: "CheckListGroup",
-  component: CheckListGroup,
+  title: "ChecklistGroup",
+  component: ChecklistGroup,
 } as Meta

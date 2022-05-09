@@ -11,7 +11,7 @@ import { BsCheckCircleFill } from "react-icons/all"
 import { BodyMd, BodySm } from "../Typography"
 import { IconType } from "react-icons"
 
-export interface CheckListItemProps
+export interface ChecklistItemProps
   extends Omit<ListItemProps, "id" | "title"> {
   itemId: string
   itemTitle: string | JSX.Element
@@ -19,7 +19,7 @@ export interface CheckListItemProps
   icon?: IconType
 }
 
-const ChecklistItem: FC<CheckListItemProps> = ({
+export const ChecklistItem: FC<ChecklistItemProps> = ({
   itemTitle,
   itemSubTitle,
   icon = BsCheckCircleFill,
@@ -27,7 +27,11 @@ const ChecklistItem: FC<CheckListItemProps> = ({
 }) => {
   const styles = useMultiStyleConfig("CheckListItem", {})
   return (
-    <ListItem __css={styles.checkListItemWrapper} {...restProps}>
+    <ListItem
+      __css={styles.checkListItemWrapper}
+      itemID={itemId}
+      {...restProps}
+    >
       <Stack direction="row">
         <ListIcon sx={styles.icon} as={icon} mt={10} />
         <Box>
@@ -46,5 +50,3 @@ const ChecklistItem: FC<CheckListItemProps> = ({
     </ListItem>
   )
 }
-
-export default ChecklistItem

@@ -1,14 +1,14 @@
 import { FC } from "react"
 import { List, ListProps, useStyleConfig } from "@chakra-ui/react"
-import ChecklistItem, { CheckListItemProps } from "../ChecklistItem"
-import BoxLabel from "../BoxLabel"
+import { ChecklistItem, ChecklistItemProps } from "../ChecklistItem"
+import { BoxLabel } from "../BoxLabel"
 
-export interface CheckListGroupProps extends ListProps {
-  checklistItems: CheckListItemProps[]
+export interface ChecklistGroupProps extends ListProps {
+  checklistItems: ChecklistItemProps[]
   title?: string
 }
 
-const ChecklistGroup: FC<CheckListGroupProps> = ({
+export const ChecklistGroup: FC<ChecklistGroupProps> = ({
   checklistItems,
   title,
   ...restProps
@@ -26,5 +26,3 @@ const ChecklistGroup: FC<CheckListGroupProps> = ({
     </>
   )
 }
-
-export default ChecklistGroup

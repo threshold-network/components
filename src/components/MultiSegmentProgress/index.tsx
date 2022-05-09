@@ -9,7 +9,9 @@ export interface MultiSegmentProgressProps extends ProgressProps {
   }[]
 }
 
-const MultiSegmentProgress: FC<MultiSegmentProgressProps> = ({ values }) => {
+export const MultiSegmentProgress: FC<MultiSegmentProgressProps> = ({
+  values,
+}) => {
   return (
     <Box position="relative">
       <Box display="flex" position="absolute" zIndex={999} w="100%" h="100%">
@@ -30,5 +32,3 @@ const MultiSegmentProgress: FC<MultiSegmentProgressProps> = ({ values }) => {
     </Box>
   )
 }
-
-export default MultiSegmentProgress

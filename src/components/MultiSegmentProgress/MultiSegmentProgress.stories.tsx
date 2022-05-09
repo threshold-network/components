@@ -1,5 +1,6 @@
 import { Meta, Story } from "@storybook/react"
-import MultiSegmentProgressComponent, {
+import {
+  MultiSegmentProgress as MultiSegmentProgressComponent,
   MultiSegmentProgressProps,
 } from "./index"
 

@@ -1,5 +1,5 @@
 import { Meta, Story } from "@storybook/react"
-import CardComponent from "./index"
+import { Card as CardComponent } from "./index"
 
 const Template: Story = () => {
   return <CardComponent>Simple Card</CardComponent>

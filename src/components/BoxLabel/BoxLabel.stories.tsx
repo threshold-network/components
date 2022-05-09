@@ -1,5 +1,5 @@
 import { Meta, Story } from "@storybook/react"
-import BoxLabelComponent from "./index"
+import { BoxLabel as BoxLabelComponent } from "./index"
 
 const Template: Story = () => {
   return <BoxLabelComponent>Simple Box Label</BoxLabelComponent>
