@@ -20,6 +20,7 @@ export interface ChecklistItemProps
 }
 
 export const ChecklistItem: FC<ChecklistItemProps> = ({
+  itemId,
   itemTitle,
   itemSubTitle,
   icon = BsCheckCircleFill,
