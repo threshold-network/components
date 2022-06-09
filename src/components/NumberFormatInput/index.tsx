@@ -1,6 +1,6 @@
 import ReactNumberFormat from "react-number-format"
 import { chakra, InputProps, useMultiStyleConfig } from "@chakra-ui/react"
-import { FC } from "react"
+import { FC, forwardRef } from "react"
 
 const ChakraWrapper = chakra(ReactNumberFormat)
 
@@ -15,8 +15,13 @@ export interface NumberFormatInputProps extends InputProps {
   decimalScale?: number
 }
 
-export const NumberFormatInput: FC<NumberFormatInputProps> = (props) => {
+export const NumberFormatInput: FC<NumberFormatInputProps> = forwardRef<
+  HTMLInputElement,
+  NumberFormatInputProps
+>((props, ref) => {
   const { field: css } = useMultiStyleConfig("Input", props)
+
+  const { decimalScale, isDisabled, ...restProps } = props
 
   return (
     // @ts-ignore
@@ -25,8 +30,9 @@ export const NumberFormatInput: FC<NumberFormatInputProps> = (props) => {
       thousandSeparator
       decimalScale={props.decimalScale}
       __css={css}
-      {...props}
-      disabled={props.isDisabled}
+      disabled={isDisabled}
+      getInputRef={ref}
+      {...restProps}
     />
   )
-}
+})

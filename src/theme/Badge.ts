@@ -11,6 +11,17 @@ export const Badge = {
     fontSize: "md",
     colorScheme: "brand",
   },
+  sizes: {
+    small: {
+      fontWeight: 500,
+    },
+    medium: {
+      fontWeight: 600,
+    },
+    large: {
+      fontWeight: 600,
+    },
+  },
   variants: {
     solid: (props: any) => {
       return {

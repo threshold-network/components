@@ -1,6 +1,6 @@
 export * from "./BoxLabel"
 export * from "./Card"
-export * from "./CheckListGroup"
+export * from "./ChecklistGroup"
 export * from "./ChecklistItem"
 export * from "./IconSpinner"
 export * from "./LineDivider"

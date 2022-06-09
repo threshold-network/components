@@ -6,9 +6,9 @@ export const CheckListItem = {
     return {
       icon: {
         marginTop: "2px",
-        height: "22px",
-        width: "22px",
-        color: "green.500",
+        height: "24px",
+        width: "24px",
+        color: "brand.500",
       },
       title: {
         color: mode("gray.700", "white")(props),

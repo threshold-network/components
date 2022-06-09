@@ -7,7 +7,7 @@ import {
   useMultiStyleConfig,
   ListItemProps,
 } from "@chakra-ui/react"
-import { BsCheckCircleFill } from "react-icons/all"
+import { BsFillArrowRightCircleFill } from "react-icons/all"
 import { BodyMd, BodySm } from "../Typography"
 import { IconType } from "react-icons"
 
@@ -23,7 +23,7 @@ export const ChecklistItem: FC<ChecklistItemProps> = ({
   itemId,
   itemTitle,
   itemSubTitle,
-  icon = BsCheckCircleFill,
+  icon = BsFillArrowRightCircleFill,
   ...restProps
 }) => {
   const styles = useMultiStyleConfig("CheckListItem", {})
