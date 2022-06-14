@@ -26,7 +26,7 @@ export const ChecklistItem: FC<ChecklistItemProps> = ({
   icon = BsFillArrowRightCircleFill,
   ...restProps
 }) => {
-  const styles = useMultiStyleConfig("CheckListItem", {})
+  const styles = useMultiStyleConfig("CheckListItem", restProps)
   return (
     <ListItem
       __css={styles.checkListItemWrapper}
