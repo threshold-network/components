@@ -1,5 +1,5 @@
 {
-  "name": "components",
+  "name": "@threshold-network/components",
   "version": "0.0.1",
   "description": "React components for Threshold Network.",
   "main": "lib/index.ts",
