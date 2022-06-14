@@ -33,7 +33,7 @@ example:
 
 `import { H1 } from "@threshold-network/components"`
 
-####Note
+#### Note
 
 After executing `yarn pack` yarn caches the package so any changes made will not be saved after re-doing `yarn pack`
 until you clean the yarn cache (`yarn cache clean`) or just change the name of the packed file (by changing the version
