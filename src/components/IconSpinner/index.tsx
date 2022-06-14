@@ -2,16 +2,20 @@ import {
   Flex,
   Icon,
   Spinner as ChakraSpinner,
+  SpinnerProps,
   useMultiStyleConfig,
 } from "@chakra-ui/react"
 import { FC } from "react"
 import { IconType } from "react-icons"
 
-export interface IconSpinnerProps {
+export interface IconSpinnerProps extends SpinnerProps {
   icon?: IconType
 }
 
-export const IconSpinner: FC<IconSpinnerProps> = ({ icon }) => {
+export const IconSpinner: FC<IconSpinnerProps> = ({
+  icon,
+  ...restSpinnerProps
+}) => {
   const styles = useMultiStyleConfig("IconSpinner", {})
   return (
     <Flex sx={styles.iconSpinnerWrapper}>
@@ -19,6 +23,7 @@ export const IconSpinner: FC<IconSpinnerProps> = ({ icon }) => {
         thickness="8px"
         speed="1.3s"
         emptyColor="gray.200"
+        {...restSpinnerProps}
         sx={styles.chakraSpinner}
       />
       <Icon sx={styles.icon} as={icon} />
