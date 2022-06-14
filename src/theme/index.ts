@@ -88,8 +88,6 @@ export const defaultTheme = {
   },
 }
 
-const index = extendTheme({
-  defaultTheme,
-})
+const index = extendTheme(defaultTheme)
 
 export default index
