@@ -16,7 +16,7 @@ export const IconSpinner: FC<IconSpinnerProps> = ({
   icon,
   ...restSpinnerProps
 }) => {
-  const styles = useMultiStyleConfig("IconSpinner", {})
+  const styles = useMultiStyleConfig("IconSpinner", restSpinnerProps)
   return (
     <Flex sx={styles.iconSpinnerWrapper}>
       <ChakraSpinner

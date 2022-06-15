@@ -13,7 +13,7 @@ export const ChecklistGroup: FC<ChecklistGroupProps> = ({
   title,
   ...restProps
 }) => {
-  const styles = useStyleConfig("CheckListGroup", {})
+  const styles = useStyleConfig("CheckListGroup", restProps)
 
   return (
     <>

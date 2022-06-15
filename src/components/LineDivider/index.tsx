@@ -36,7 +36,7 @@ export const LineDivider = ({
   children,
   ...props
 }: Omit<DividerProps, "orientation">) => {
-  const styles = useMultiStyleConfig("LineDivider", {})
+  const styles = useMultiStyleConfig("LineDivider", props)
   const hasChildren = React.Children.count(children) > 0
   const Wrapper = !hasChildren ? React.Fragment : Box
   const wrapperProps = !hasChildren ? {} : { __css: styles.dividerWrapper }
