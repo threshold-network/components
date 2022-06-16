@@ -1,3 +1,7 @@
-import { Headline, H1, H2, H3, H4, H5, Body1, Body2, Body3, Label1, Label2, Label3 } from "./components/Typography";
+import { defaultTheme } from "./theme"
 
-export { Headline, H1, H2, H3, H4, H5, Body1, Body2, Body3, Label1, Label2, Label3 }
+export * from "@chakra-ui/react"
+export * from "./components"
+export * as Type from "./types"
+export { defaultTheme } from "./theme"
+export * as ThemeUtils from "./theme/utils"

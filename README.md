@@ -2,34 +2,57 @@
 
 This repo contains reusable React components for Threshold Network.
 
-## Setup
+##Setup
+***
 
-Install packages
+###Install packages
 
 `yarn`
 
-Run storybook
+###Run storybook
 
 `yarn run storybook`
 
 ## Use package locally in different project
+***
+
+###Build the project
 
 `yarn build` - this should build the code inside a `lib` directory
 
+###Create compressed gzip archive of package dependencies
+
 To use the package locally without uploading it to npm registry you can:
 
-`npm pack` - which will create a tar file of the package in the root directory
+`yarn pack --filename <filename>` - which will create a gzip archive (with the name given after `-- namefile`) of the 
+package in the root directory
 
-Then you go to the local project in which you want to use the package and add this line to `package.json`:
+###Use the gzip archive in your project
 
-`
-"@threshold-network/components": "file:./<path_to_this_project>/<name_of_the_file>.tgz",
-`
+To use the created gzip archive in your project you should go to your project directory and run:
 
-After that you just run:
+```
+yarn add file:<path_to_the_file>.tgz
+```
+
+Alternatively you can just add the file to the project's `package.json` by adding this line there:
+
+`"@threshold-network/components": "file:./<path_to_this_project>/<name_of_the_file>.tgz",`
+
+and after that you just run:
 
 `yarn`
 
-in the second project and that's it! You can now use the threshold network components by simply importing them. For example:
+###You can now use your local package in your project
+
+You can now use the local version of threshold network components by simply importing them from 
+`@threshold-network.components`. For
+example:
 
 `import { H1 } from "@threshold-network/components"`
+
+#### Note
+
+After executing `yarn pack` yarn caches the package so any changes made will not be saved after re-doing `yarn pack`
+until you clean the yarn cache (`yarn cache clean`) or just change the name of the packed file specified in `--filename` 
+argument.

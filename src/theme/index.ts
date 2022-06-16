@@ -1,4 +1,14 @@
 import { extendTheme, theme } from "@chakra-ui/react"
+import { Button } from "./Button"
+import { Badge } from "./Badge"
+import { Alert } from "./Alert"
+import { LineDivider } from "./LineDivider"
+import { Card } from "./Card"
+import { Progress } from "./Progress"
+import { CheckListItem } from "./CheckListItem"
+import { CheckListGroup } from "./CheckListGroup"
+import { IconSpinner } from "./IconSpinner"
+import { fonts } from "./fonts"
 
 const colors = {
   brand: {
@@ -9,7 +19,7 @@ const colors = {
     // 400
     500: "#7D00FF", // main Threshold brand color
     550: "#7C47EE", // main Threshold brand color - DARK MODE
-    // 600
+    600: "#BD30FF",
     700: "#4E2E99",
     800: "#3B257A",
     900: "#1C0758",
@@ -25,6 +35,7 @@ const colors = {
     // 600
     700: "#4A5568",
     800: "#323A47",
+    850: "#2A313C",
     900: "#1D2229",
   },
   yellow: {
@@ -47,12 +58,36 @@ const colors = {
     800: "#731D1D",
     900: "#4C1316",
   },
+  green: {
+    50: "#F0FFF4",
+    100: "#C6F6D5",
+    200: "#9AE6B4",
+    300: "#68D391",
+    400: "#48BB78",
+    500: "#38A169",
+    600: "#25855A",
+    700: "#276749",
+    800: "#22543D",
+    900: "#1C4532",
+  },
 }
 
-const index = extendTheme({
+export const defaultTheme = {
+  fonts,
   colors,
   components: {
+    Alert,
+    Button,
+    Badge,
+    Card,
+    CheckListGroup,
+    CheckListItem,
+    IconSpinner,
+    LineDivider,
+    Progress,
   },
-})
+}
+
+const index = extendTheme(defaultTheme)
 
 export default index
