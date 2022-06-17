@@ -18,7 +18,7 @@ This repo contains reusable React components for Threshold Network.
 
 ---
 
-Build the project
+### Build the project
 
 `yarn build` - this should build the code inside a `lib` directory
 
