@@ -28,6 +28,9 @@ export default {
       useTsconfigDeclarationDir: true,
       rollupCommonJSResolveHack: false,
       clean: true,
+      tsconfigOverride: {
+        exclude: ["**/*.stories.tsx"],
+      },
     }),
     postcss({
       extensions: [".css"],
