@@ -2,32 +2,32 @@
 
 This repo contains reusable React components for Threshold Network.
 
-##Setup
+## Setup
 ***
 
-###Install packages
+### Install packages
 
 `yarn`
 
-###Run storybook
+### Run storybook
 
 `yarn run storybook`
 
 ## Use package locally in different project
 ***
 
-###Build the project
+Build the project
 
 `yarn build` - this should build the code inside a `lib` directory
 
-###Create compressed gzip archive of package dependencies
+### Create compressed gzip archive of package dependencies
 
 To use the package locally without uploading it to npm registry you can:
 
 `yarn pack --filename <filename>` - which will create a gzip archive (with the name given after `-- namefile`) of the 
 package in the root directory
 
-###Use the gzip archive in your project
+### Use the gzip archive in your project
 
 To use the created gzip archive in your project you should go to your project directory and run:
 
@@ -43,7 +43,7 @@ and after that you just run:
 
 `yarn`
 
-###You can now use your local package in your project
+### You can now use your local package in your project
 
 You can now use the local version of threshold network components by simply importing them from 
 `@threshold-network.components`. For
