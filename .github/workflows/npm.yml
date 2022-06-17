@@ -39,7 +39,7 @@ jobs:
           branch: ${{ github.ref }}
           commit: ${{ github.sha }}
 
-      - name: Publish package
+      - name: Publish package # TODO: switch off --dry-run
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-        run: npm publish --access=public --tag=development
+        run: npm publish --access=public --tag=development --dry-run
