@@ -1,6 +1,6 @@
 {
   "name": "@threshold-network/components",
-  "version": "1.0.0-dev",
+  "version": "1.0.0-dev.0",
   "description": "React components for Threshold Network.",
   "main": "lib/index.ts",
   "module": "lib/index.esm.js",

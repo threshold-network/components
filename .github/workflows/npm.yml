@@ -12,6 +12,7 @@ on:
       - "yarn.lock"
       - ".github/workflows/npm.yml"
   workflow_dispatch:
+  pull_request: # TODO: remove this
 
 jobs:
   npm-compile-publish:
@@ -31,13 +32,13 @@ jobs:
       - name: Compile
         run: yarn build
 
-      - name: Bump up package version
-        id: npm-version-bump
-        uses: keep-network/npm-version-bump@v2
-        with:
-          environment: dev
-          branch: ${{ github.ref }}
-          commit: ${{ github.sha }}
+#      - name: Bump up package version
+#        id: npm-version-bump
+#        uses: keep-network/npm-version-bump@v2
+#        with:
+#          environment: dev
+#          branch: ${{ github.ref }}
+#          commit: ${{ github.sha }}
 
       - name: Publish package # TODO: switch off --dry-run
         env:
