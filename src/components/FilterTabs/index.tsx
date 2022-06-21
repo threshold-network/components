@@ -7,7 +7,7 @@ export type Size = "xs" | "sm" | "md" | "lg"
 export interface FilterTabProps {
   title: string
   tabId: string
-  onClick?: (tabId: string) => void
+  onClick: (tabId: string) => void
   selectedTabId: string
   variant: Variant
   size: Size
@@ -67,7 +67,7 @@ const FilterTab: FC<FilterTabProps> = ({
       }}
       color={isActive ? activeColor : passiveColor}
       borderColor={isActive ? activeBorderColor : undefined}
-      onClick={() => onClick?.(tabId)}
+      onClick={() => onClick(tabId)}
       size={size}
     >
       {title}
