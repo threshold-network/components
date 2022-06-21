@@ -1,50 +1,19 @@
 import React, { useState } from "react"
 import { Meta, Story } from "@storybook/react"
-import { Container, TabsProps } from "@chakra-ui/react"
-import { FilterTabs as FilterTabsComponent } from "./"
+import { Container } from "@chakra-ui/react"
+import { FilterTabs as FilterTabsComponent, FilterTabsProps } from "./"
 
-interface FilterTabsStoryProps extends TabsProps {}
+interface FilterTabsStoryProps extends FilterTabsProps {}
 
-const Template: Story<FilterTabsStoryProps> = () => {
+const Template: Story<FilterTabsStoryProps> = (args) => {
   const [tab, setTab] = useState("1")
   return (
     <Container>
       <FilterTabsComponent
-        variant="outline"
+        {...args}
         size="lg"
         selectedTabId={tab}
         setSelectedTabId={setTab}
-        tabs={[
-          {
-            title: "Tab 1",
-            tabId: "1",
-            onClick: (tabId) => {
-              console.log("tab", tabId)
-              setTab(tabId)
-            },
-          },
-          { title: "Tab 2", tabId: "2" },
-          { title: "Tab 3", tabId: "3" },
-          { title: "Tab 4", tabId: "4" },
-        ]}
-      />
-      <FilterTabsComponent
-        size="lg"
-        selectedTabId={tab}
-        setSelectedTabId={setTab}
-        tabs={[
-          {
-            title: "Tab 1",
-            tabId: "1",
-            onClick: (tabId) => {
-              console.log("tab", tabId)
-              setTab(tabId)
-            },
-          },
-          { title: "Tab 2", tabId: "2" },
-          { title: "Tab 3", tabId: "3" },
-          { title: "Tab 4", tabId: "4" },
-        ]}
       />
     </Container>
   )
@@ -52,12 +21,38 @@ const Template: Story<FilterTabsStoryProps> = () => {
 
 export const FilterTabs = Template.bind({})
 
+FilterTabs.args = {
+  tabs: [
+    {
+      title: "Tab 1",
+      tabId: "1",
+      onClick: (tabId) => {
+        console.log("tab", tabId)
+      },
+    },
+    { title: "Tab 2", tabId: "2" },
+    { title: "Tab 3", tabId: "3" },
+    { title: "Tab 4", tabId: "4" },
+  ],
+}
+
 export default {
   title: "FilterTabs",
   component: FilterTabs,
   argTypes: {
-    children: {
-      description: "Use the filter tabs to switch between states",
+    tabs: {
+      description: "The tabs that will be rendered",
+    },
+    variant: {
+      description: "The variant of the filter",
+      defaultValue: "primary",
+      control: {
+        type: "select",
+        options: {
+          primary: "primary",
+          outline: "outline",
+        },
+      },
     },
   },
 } as Meta
