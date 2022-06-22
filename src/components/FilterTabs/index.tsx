@@ -1,5 +1,10 @@
 import { FC } from "react"
-import { Button, ButtonGroup, useColorModeValue } from "@chakra-ui/react"
+import {
+  Button,
+  ButtonGroup,
+  useColorModeValue,
+  useStyleConfig,
+} from "@chakra-ui/react"
 
 export type Variant = "primary" | "outline"
 export type Size = "xs" | "sm" | "md" | "lg"
@@ -34,41 +39,14 @@ const FilterTab: FC<FilterTabProps> = ({
   size,
 }) => {
   const isActive = selectedTabId === tabId
-
-  const activeColor = useColorModeValue(
-    variant === "primary" ? "brand.500" : "gray.700",
-    variant === "primary" ? "brand.100" : "gray.50"
-  )
-  const passiveColor = "gray.500"
-
-  const activeBg = useColorModeValue(
-    variant === "primary" ? "brand.50" : "white",
-    variant === "primary" ? "brand.800" : "gray.900"
-  )
-
-  const activeBorderColor = useColorModeValue("gray.50", "gray.300")
-
-  const passiveHoverBg = useColorModeValue(
-    variant === "primary" ? "brand.50" : "white",
-    variant === "primary" ? "brand.800" : "gray.800"
-  )
+  const styles = useStyleConfig("FilterTab", { isActive, variant })
 
   return (
     <Button
-      isFullWidth
-      border={variant === "primary" ? "none" : undefined}
       variant={isActive ? "outline" : "ghost"}
-      bg={isActive ? activeBg : undefined}
-      _hover={{
-        bg: isActive ? activeBg : passiveHoverBg,
-      }}
-      _active={{
-        bg: isActive ? activeBg : undefined,
-      }}
-      color={isActive ? activeColor : passiveColor}
-      borderColor={isActive ? activeBorderColor : undefined}
       onClick={() => onClick(tabId)}
       size={size}
+      sx={styles}
     >
       {title}
     </Button>

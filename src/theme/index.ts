@@ -8,6 +8,7 @@ import { Progress } from "./Progress"
 import { CheckListItem } from "./CheckListItem"
 import { CheckListGroup } from "./CheckListGroup"
 import { IconSpinner } from "./IconSpinner"
+import { FilterTab } from "./FilterTab"
 import { fonts } from "./fonts"
 
 const colors = {
@@ -85,6 +86,7 @@ export const defaultTheme = {
     IconSpinner,
     LineDivider,
     Progress,
+    FilterTab,
   },
 }
 

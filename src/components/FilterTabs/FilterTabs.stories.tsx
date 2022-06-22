@@ -26,9 +26,6 @@ FilterTabs.args = {
     {
       title: "Tab 1",
       tabId: "1",
-      onClick: (tabId) => {
-        console.log("tab", tabId)
-      },
     },
     { title: "Tab 2", tabId: "2" },
     { title: "Tab 3", tabId: "3" },
