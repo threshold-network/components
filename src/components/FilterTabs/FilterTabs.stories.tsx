@@ -11,7 +11,6 @@ const Template: Story<FilterTabsStoryProps> = (args) => {
     <Container>
       <FilterTabsComponent
         {...args}
-        size="lg"
         selectedTabId={tab}
         setSelectedTabId={setTab}
       />
@@ -47,7 +46,20 @@ export default {
         type: "select",
         options: {
           primary: "primary",
-          outline: "outline",
+          inline: "inline",
+        },
+      },
+    },
+    size: {
+      description: "The size of the filter",
+      defaultValue: "md",
+      control: {
+        type: "select",
+        options: {
+          xs: "xs",
+          sm: "sm",
+          md: "md",
+          lg: "lg",
         },
       },
     },

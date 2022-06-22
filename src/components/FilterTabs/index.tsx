@@ -1,26 +1,19 @@
 import { FC } from "react"
-import {
-  Button,
-  ButtonGroup,
-  useColorModeValue,
-  useStyleConfig,
-} from "@chakra-ui/react"
-
-export type Variant = "primary" | "outline"
-export type Size = "xs" | "sm" | "md" | "lg"
+import { Button, ButtonGroup, useStyleConfig } from "@chakra-ui/react"
+import { FilterTabSize, FilterTabVariant } from "../../theme/FilterTab"
 
 export interface FilterTabProps {
   title: string
   tabId: string
   onClick: (tabId: string) => void
   selectedTabId: string
-  variant: Variant
-  size: Size
+  variant: FilterTabVariant
+  size: FilterTabSize
 }
 
 export interface FilterTabsProps {
-  variant?: Variant
-  size?: Size
+  variant?: FilterTabVariant
+  size?: FilterTabSize
   selectedTabId: string
   setSelectedTabId: (tabId: string) => void
   tabs: {
@@ -60,21 +53,10 @@ export const FilterTabs: FC<FilterTabsProps> = ({
   variant = "primary",
   size = "md",
 }) => {
-  const bgColor = useColorModeValue(
-    variant === "primary" ? "white" : "gray.50",
-    "gray.900"
-  )
+  const styles = useStyleConfig("FilterTabs", { variant })
 
   return (
-    <ButtonGroup
-      boxShadow={variant === "primary" ? "md" : undefined}
-      backgroundColor={bgColor}
-      borderRadius="6px"
-      p={1}
-      spacing="3"
-      size={size}
-      w="full"
-    >
+    <ButtonGroup spacing="3" size={size} sx={styles}>
       {tabs.map((tab) => {
         return (
           <FilterTab

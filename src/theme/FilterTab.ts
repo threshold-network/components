@@ -1,5 +1,8 @@
 import { mode } from "@chakra-ui/theme-tools"
 
+export type FilterTabVariant = "primary" | "inline"
+export type FilterTabSize = "xs" | "sm" | "md" | "lg"
+
 export const FilterTab = {
   baseStyle: (props: any) => {
     const { isActive, variant } = props
@@ -23,7 +26,7 @@ export const FilterTab = {
     )(props)
 
     return {
-      width: "full",
+      width: variant === "primary" ? "full" : "fit-content",
       border: variant === "primary" ? "none" : undefined,
       bg: isActive ? activeBg : undefined,
       color: isActive ? activeColor : passiveColor,
