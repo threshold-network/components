@@ -1,16 +1,17 @@
 import { mode } from "@chakra-ui/theme-tools"
+import { ComponentStyleConfig } from "@chakra-ui/react"
 
 export type FilterTabVariant = "primary" | "inline"
 export type FilterTabSize = "xs" | "sm" | "md" | "lg"
 
-export const FilterTab = {
+export const FilterTab: ComponentStyleConfig = {
   baseStyle: {
     bg: undefined,
     color: "gray.500",
     borderColor: undefined,
   },
-  variants: (props: any) => ({
-    primary: {
+  variants: {
+    primary: (props) => ({
       width: "full",
       border: "none",
       _hover: {
@@ -24,8 +25,8 @@ export const FilterTab = {
           bg: mode("brand.50", "brand.800")(props),
         },
       },
-    },
-    inline: {
+    }),
+    inline: (props) => ({
       width: "fit-content",
       border: undefined,
       _hover: {
@@ -39,6 +40,6 @@ export const FilterTab = {
           bg: mode("brand.50", "brand.800")(props),
         },
       },
-    },
-  }),
+    }),
+  },
 }
