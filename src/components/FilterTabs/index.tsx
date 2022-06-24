@@ -50,8 +50,6 @@ const FilterTab: FC<FilterTabProps> = ({ tabId, title, variant }) => {
   const isActive = selectedTabId === tabId
   const styles = useStyleConfig("FilterTab", { isActive, variant })
 
-  console.log("styles ", styles)
-
   return (
     <Button
       isActive={isActive}
