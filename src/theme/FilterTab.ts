@@ -4,39 +4,41 @@ export type FilterTabVariant = "primary" | "inline"
 export type FilterTabSize = "xs" | "sm" | "md" | "lg"
 
 export const FilterTab = {
-  baseStyle: (props: any) => {
-    const { isActive, variant } = props
-
-    const activeColor = mode(
-      variant === "primary" ? "brand.500" : "gray.700",
-      variant === "primary" ? "brand.100" : "gray.50"
-    )(props)
-    const passiveColor = "gray.500"
-
-    const activeBg = mode(
-      variant === "primary" ? "brand.50" : "white",
-      variant === "primary" ? "brand.800" : "gray.900"
-    )(props)
-
-    const activeBorderColor = mode("gray.50", "gray.300")(props)
-
-    const passiveHoverBg = mode(
-      variant === "primary" ? "brand.50" : "white",
-      variant === "primary" ? "brand.800" : "gray.800"
-    )(props)
-
-    return {
-      width: variant === "primary" ? "full" : "fit-content",
-      border: variant === "primary" ? "none" : undefined,
-      bg: isActive ? activeBg : undefined,
-      color: isActive ? activeColor : passiveColor,
-      borderColor: isActive ? activeBorderColor : undefined,
+  baseStyle: {
+    bg: undefined,
+    color: "gray.500",
+    borderColor: undefined,
+  },
+  variants: (props: any) => ({
+    primary: {
+      width: "full",
+      border: "none",
       _hover: {
-        bg: isActive ? activeBg : passiveHoverBg,
+        bg: mode("brand.50", "brand.800")(props),
       },
       _active: {
-        bg: isActive ? activeBg : undefined,
+        bg: mode("brand.50", "brand.800")(props),
+        color: mode("brand.500", "brand.100")(props),
+        borderColor: mode("gray.50", "gray.300")(props),
+        _hover: {
+          bg: mode("brand.50", "brand.800")(props),
+        },
       },
-    }
-  },
+    },
+    inline: {
+      width: "fit-content",
+      border: undefined,
+      _hover: {
+        bg: mode("white", "gray.800")(props),
+      },
+      _active: {
+        bg: mode("white", "gray.800")(props),
+        color: mode("gray.700", "gray.50")(props),
+        borderColor: mode("gray.50", "gray.300")(props),
+        _hover: {
+          bg: mode("brand.50", "brand.800")(props),
+        },
+      },
+    },
+  }),
 }

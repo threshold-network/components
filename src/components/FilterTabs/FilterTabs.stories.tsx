@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React from "react"
 import { Meta, Story } from "@storybook/react"
 import { Container } from "@chakra-ui/react"
 import { FilterTabs as FilterTabsComponent, FilterTabsProps } from "./"
@@ -6,14 +6,9 @@ import { FilterTabs as FilterTabsComponent, FilterTabsProps } from "./"
 interface FilterTabsStoryProps extends FilterTabsProps {}
 
 const Template: Story<FilterTabsStoryProps> = (args) => {
-  const [tab, setTab] = useState("1")
   return (
     <Container>
-      <FilterTabsComponent
-        {...args}
-        selectedTabId={tab}
-        setSelectedTabId={setTab}
-      />
+      <FilterTabsComponent {...args} />
     </Container>
   )
 }
