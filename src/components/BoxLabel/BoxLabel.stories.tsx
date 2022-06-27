@@ -14,8 +14,7 @@ const iconMap: IconMap = {
 
 const Template: Story<BoxLabelStoryProps> = (args) => {
   return (
-    // @ts-ignore
-    <BoxLabelComponent {...args} icon={iconMap[args.icon]}>
+    <BoxLabelComponent {...args} icon={args.icon}>
       Simple Box Label
     </BoxLabelComponent>
   )
@@ -32,8 +31,8 @@ export default {
         type: "select",
         options: {
           Undefined: undefined,
-          Sparkle: "Sparkle",
-          Alert: "Alert",
+          Sparkle: iconMap.Sparkle,
+          Alert: iconMap.Alert,
         },
       },
     },
