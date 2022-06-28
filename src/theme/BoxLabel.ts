@@ -1,5 +1,5 @@
-import theme from "./index"
 import { ComponentStyleConfig } from "@chakra-ui/react"
+import { colors } from "./utils"
 export type BoxLabelVariant = "solid" | "outline"
 export type BoxLabelSize = "xs" | "sm" | "md" | "lg"
 export type BoxLabelStatus = "primary" | "secondary" | "magic"
@@ -24,7 +24,7 @@ export const BoxLabel: ComponentStyleConfig = {
         bg: {
           primary: "brand.50",
           secondary: "gray.50",
-          magic: theme.colors.gradient[3],
+          magic: colors.gradient[3],
         }[status],
         border: "none",
         color: {
