@@ -11,8 +11,14 @@ import { IconSpinner } from "./IconSpinner"
 import { FilterTab } from "./FilterTab"
 import { FilterTabs } from "./FilterTabs"
 import { fonts } from "./fonts"
+import { BoxLabel } from "./BoxLabel"
 
 const colors = {
+  gradient: {
+    1: "linear-gradient(to bottom right, #7D00FF, #7F00AC)",
+    2: "linear-gradient(to bottom right, #7D00FF, #9D21FF)",
+    3: "linear-gradient(to bottom right, #BD30FF, #7D00FF)",
+  },
   brand: {
     50: "#FCF9FF",
     100: "#D5C6FF",
@@ -80,6 +86,7 @@ export const defaultTheme = {
   components: {
     Alert,
     Button,
+    BoxLabel,
     Badge,
     Card,
     CheckListGroup,
