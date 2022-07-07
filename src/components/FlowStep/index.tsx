@@ -28,12 +28,13 @@ export const FlowStep: FC<FlowStepProps> = ({
   hideDescription = false,
   hideDescriptionArrow = false,
 }) => {
+  const isSmall = size === "sm"
   const isActive = status === "active"
   const isComplete = status === "complete"
   const isVertical = position === "vertical"
-  const PreTitle = size === "sm" ? LabelXs : LabelSm
-  const Title = size === "sm" ? LabelSm : LabelLg
-  const Description = size === "sm" ? BodySm : BodyMd
+  const PreTitle = isSmall ? LabelXs : LabelSm
+  const Title = isSmall ? LabelSm : LabelLg
+  const Description = isSmall ? BodySm : BodyMd
 
   return (
     <Box display="flex" mb={4} flexDirection={isVertical ? "row" : "column"}>
@@ -59,7 +60,7 @@ export const FlowStep: FC<FlowStepProps> = ({
             <Box display="flex">
               {!hideDescriptionArrow && isActive && (
                 <Icon
-                  mt={size === "sm" ? "2px" : "4px"}
+                  mt={isSmall ? "2px" : "4px"}
                   w="16px"
                   h="16px"
                   mr={2}
