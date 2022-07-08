@@ -13,6 +13,7 @@
   "license": "MIT",
   "devDependencies": {
     "@babel/core": "^7.17.9",
+    "@chakra-ui/cli": "0.0.0-pr-20211126153854",
     "@chakra-ui/icons": "^1.0.15",
     "@chakra-ui/react": "^1.6.7",
     "@fontsource/inter": "^4.5.10",

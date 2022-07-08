@@ -13,6 +13,7 @@ import { FilterTabs } from "./FilterTabs"
 import { fonts } from "./fonts"
 import { BoxLabel } from "./BoxLabel"
 import { colors } from "./utils"
+import { FlowStep } from "./FlowStep"
 
 export const defaultTheme = {
   fonts,
@@ -30,6 +31,7 @@ export const defaultTheme = {
     Progress,
     FilterTab,
     FilterTabs,
+    FlowStep,
   },
 }
 
