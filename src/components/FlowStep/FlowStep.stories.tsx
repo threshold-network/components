@@ -1,7 +1,7 @@
 import React from "react"
 import { Meta, Story } from "@storybook/react"
 import { Container, Link, Image } from "@chakra-ui/react"
-import customDescriptionImage from "./customDescriptionImage.png"
+import customDescriptionImage from "./DepositBTCAddresCreationImage.png"
 import { FlowStep as FlowStepComponent, FlowStepProps } from "./"
 import { BodyMd } from "../Typography"
 
@@ -38,8 +38,8 @@ FlowStep.args = {
   title: "Provide Data",
   description:
     "Provide an ETH address and a BTC Recovery address to generate an unique BTC deposit address.",
-  hideDescription: false,
-  hideDescriptionArrow: false,
+  isDescriptionHidden: false,
+  isDescriptionArrowHidden: false,
 }
 
 export default {
@@ -64,7 +64,7 @@ export default {
         },
       },
     },
-    position: {
+    variant: {
       description: "The position of the flow step",
       defaultValue: "vertical",
       control: {
