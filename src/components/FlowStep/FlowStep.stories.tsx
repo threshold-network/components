@@ -1,7 +1,7 @@
 import React from "react"
 import { Meta, Story } from "@storybook/react"
 import { Container, Link, Image } from "@chakra-ui/react"
-import customDescriptionImage from "./DepositBTCAddresCreationImage.png"
+import customDescriptionImage from "../../static/images/DepositBTCAddresCreationImage.png"
 import { FlowStep as FlowStepComponent, FlowStepProps } from "./"
 import { BodyMd } from "../Typography"
 
