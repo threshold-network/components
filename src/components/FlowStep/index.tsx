@@ -21,9 +21,9 @@ export interface FlowStepProps extends BoxProps {
 
 export const FlowStep: FC<FlowStepProps> = (props) => {
   const {
-    status = "inactive",
-    variant = "vertical",
-    size = "lg",
+    status = FlowStepStatus.inactive,
+    variant = FlowStepVariant.vertical,
+    size = FlowStepSize.lg,
     preTitle,
     title,
     description,
@@ -33,9 +33,9 @@ export const FlowStep: FC<FlowStepProps> = (props) => {
   } = props
   const styles = useMultiStyleConfig("FlowStep", props)
 
-  const isActive = status === "active"
-  const isComplete = status === "complete"
-  const isSmall = size === "sm"
+  const isActive = status === FlowStepStatus.active
+  const isComplete = status === FlowStepStatus.complete
+  const isSmall = size === FlowStepSize.sm
   const PreTitle = isSmall ? LabelXs : LabelSm
   const Title = isSmall ? LabelSm : LabelLg
   const Description = isSmall ? BodySm : BodyMd

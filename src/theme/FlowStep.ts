@@ -1,8 +1,20 @@
 import { mode } from "@chakra-ui/theme-tools"
 
-export type FlowStepStatus = "active" | "inactive" | "complete"
-export type FlowStepVariant = "vertical" | "horizontal"
-export type FlowStepSize = "sm" | "lg"
+export enum FlowStepStatus {
+  active = "ACTIVE",
+  inactive = "INACTIVE",
+  complete = "COMPLETE",
+}
+
+export enum FlowStepVariant {
+  vertical = "VERTICAL",
+  horizontal = "HORIZONTAL",
+}
+
+export enum FlowStepSize {
+  sm = "SM",
+  lg = "LG",
+}
 
 export const FlowStep = {
   parts: [
@@ -15,8 +27,8 @@ export const FlowStep = {
     "descriptionArrow",
   ],
   baseStyle: (props: any) => {
-    const isActive = props.status === "active"
-    const isComplete = props.status === "complete"
+    const isActive = props.status === FlowStepStatus.active
+    const isComplete = props.status === FlowStepStatus.complete
 
     return {
       wrapper: {

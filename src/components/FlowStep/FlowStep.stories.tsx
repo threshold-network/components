@@ -4,6 +4,11 @@ import { Container, Link, Image } from "@chakra-ui/react"
 import customDescriptionImage from "../../static/images/DepositBTCAddresCreationImage.png"
 import { FlowStep as FlowStepComponent, FlowStepProps } from "./"
 import { BodyMd } from "../Typography"
+import {
+  FlowStepSize,
+  FlowStepStatus,
+  FlowStepVariant,
+} from "../../theme/FlowStep"
 
 interface FlowStepStoryProps extends FlowStepProps {
   customDescription: boolean
@@ -55,35 +60,35 @@ export default {
     },
     size: {
       description: "The size of the flow step",
-      defaultValue: "lg",
+      defaultValue: FlowStepSize.lg,
       control: {
         type: "select",
         options: {
-          sm: "sm",
-          lg: "lg",
+          sm: FlowStepSize.sm,
+          lg: FlowStepSize.lg,
         },
       },
     },
     variant: {
       description: "The position of the flow step",
-      defaultValue: "vertical",
+      defaultValue: FlowStepVariant.vertical,
       control: {
         type: "select",
         options: {
-          vertical: "vertical",
-          horizontal: "horizontal",
+          vertical: FlowStepVariant.vertical,
+          horizontal: FlowStepVariant.horizontal,
         },
       },
     },
     status: {
       description: "The status of the flow step",
-      defaultValue: "inactive",
+      defaultValue: FlowStepStatus.inactive,
       control: {
         type: "select",
         options: {
-          active: "active",
-          inactive: "inactive",
-          complete: "complete",
+          active: FlowStepStatus.active,
+          inactive: FlowStepStatus.inactive,
+          complete: FlowStepStatus.complete,
         },
       },
     },
