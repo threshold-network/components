@@ -1,7 +1,7 @@
 import React from "react"
 import { Meta, Story } from "@storybook/react"
 import { Container, Link, Image } from "@chakra-ui/react"
-import customDescriptionImage from "../../static/images/DepositBTCAddresCreationImage.png"
+import DepositBTCAddressCreationImage from "../../static/images/DepositBTCAddressCreationImage.png"
 import { FlowStep as FlowStepComponent, FlowStepProps } from "./"
 import { BodyMd } from "../Typography"
 import {
@@ -11,27 +11,25 @@ import {
 } from "../../theme/FlowStep"
 
 interface FlowStepStoryProps extends FlowStepProps {
-  customDescription: boolean
+  useCustomChildren: boolean
 }
 
-const CustomDescription = (
+const JsxChildren = (
   <>
     <BodyMd mb={2}>
       Provide an ETH address and a BTC Recovery address to generate an unique
       BTC deposit address. <Link color="purple.500">Read more</Link>
     </BodyMd>
-    <Image maxW="240px" src={customDescriptionImage} />
+    <Image maxW="240px" src={DepositBTCAddressCreationImage} />
   </>
 )
 
 const Template: Story<FlowStepStoryProps> = (args) => {
-  const description = args.customDescription
-    ? CustomDescription
-    : args.description
+  const children = args.useCustomChildren ? JsxChildren : args.children
 
   return (
     <Container>
-      <FlowStepComponent {...args} description={description} />
+      <FlowStepComponent {...args}>{children}</FlowStepComponent>
     </Container>
   )
 }
@@ -41,7 +39,7 @@ export const FlowStep = Template.bind({})
 FlowStep.args = {
   preTitle: "Step 1",
   title: "Provide Data",
-  description:
+  children:
     "Provide an ETH address and a BTC Recovery address to generate an unique BTC deposit address.",
   isDescriptionHidden: false,
   isDescriptionArrowHidden: false,
@@ -51,7 +49,7 @@ export default {
   title: "FlowStep",
   component: FlowStep,
   argTypes: {
-    customDescription: {
+    useCustomChildren: {
       description: "Show a custom description",
       defaultValue: false,
       control: {

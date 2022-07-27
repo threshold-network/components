@@ -14,7 +14,6 @@ export interface FlowStepProps extends BoxProps {
   size?: FlowStepSize
   preTitle: string
   title: string
-  description?: string | JSX.Element
   isDescriptionHidden?: boolean
   isDescriptionArrowHidden?: boolean
 }
@@ -26,7 +25,7 @@ export const FlowStep: FC<FlowStepProps> = (props) => {
     size = FlowStepSize.lg,
     preTitle,
     title,
-    description,
+    children,
     isDescriptionHidden = false,
     isDescriptionArrowHidden = false,
     ...rest
@@ -48,7 +47,7 @@ export const FlowStep: FC<FlowStepProps> = (props) => {
         <Title __css={styles.title}>{title}</Title>
         {!isDescriptionHidden &&
           !isComplete &&
-          (typeof description === "string" ? (
+          (typeof children === "string" ? (
             <Box display="flex">
               {!isDescriptionArrowHidden && isActive && (
                 <Icon
@@ -56,10 +55,10 @@ export const FlowStep: FC<FlowStepProps> = (props) => {
                   as={IoArrowForwardCircleSharp}
                 />
               )}
-              <Description>{description}</Description>
+              <Description>{children}</Description>
             </Box>
           ) : (
-            description
+            children
           ))}
       </Box>
     </Box>
