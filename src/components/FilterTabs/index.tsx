@@ -42,7 +42,12 @@ const FilterTabsProvider: FC<TabsProviderProps> = (props) => {
     <FilterTabsContext.Provider
       value={{
         selectedTabId,
-        onTabClick: props.onTabClick || setSelectedTabId,
+        onTabClick: (tabId) => {
+          if (props.onTabClick) {
+            props.onTabClick(tabId)
+          }
+          setSelectedTabId(tabId)
+        },
       }}
     >
       {props.children}
