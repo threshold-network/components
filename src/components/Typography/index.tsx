@@ -1,11 +1,5 @@
 import { FC } from "react"
-import {
-  Heading,
-  HeadingProps,
-  Text,
-  TextProps,
-  useColorModeValue,
-} from "@chakra-ui/react"
+import { Heading, Text, TextProps, useColorModeValue } from "@chakra-ui/react"
 
 export const H1: FC<TextProps> = (props) => {
   return (
