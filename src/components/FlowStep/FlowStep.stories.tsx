@@ -2,13 +2,12 @@ import React from "react"
 import { Meta, Story } from "@storybook/react"
 import { Container, Link, Image } from "@chakra-ui/react"
 import DepositBTCAddressCreationImage from "../../static/images/DepositBTCAddressCreationImage.png"
-import { FlowStep as FlowStepComponent, FlowStepProps } from "./"
-import { BodyMd } from "../Typography"
 import {
-  FlowStepSize,
+  FlowStep as FlowStepComponent,
+  FlowStepProps,
   FlowStepStatus,
-  FlowStepVariant,
-} from "../../theme/FlowStep"
+} from "./"
+import { BodyMd } from "../Typography"
 
 interface FlowStepStoryProps extends FlowStepProps {
   useCustomChildren: boolean
@@ -58,23 +57,23 @@ export default {
     },
     size: {
       description: "The size of the flow step",
-      defaultValue: FlowStepSize.lg,
+      defaultValue: "lg",
       control: {
         type: "select",
         options: {
-          sm: FlowStepSize.sm,
-          lg: FlowStepSize.lg,
+          sm: "sm",
+          lg: "lg",
         },
       },
     },
     variant: {
       description: "The position of the flow step",
-      defaultValue: FlowStepVariant.vertical,
+      defaultValue: "vertical",
       control: {
         type: "select",
         options: {
-          vertical: FlowStepVariant.vertical,
-          horizontal: FlowStepVariant.horizontal,
+          vertical: "vertical",
+          horizontal: "horizontal",
         },
       },
     },

@@ -2,11 +2,15 @@ import { FC } from "react"
 import { Box, BoxProps, Icon, useMultiStyleConfig } from "@chakra-ui/react"
 import { BodyMd, BodySm, LabelLg, LabelSm, LabelXs } from "../Typography"
 import { IoArrowForwardCircleSharp } from "react-icons/all"
-import {
-  FlowStepSize,
-  FlowStepStatus,
-  FlowStepVariant,
-} from "../../theme/FlowStep"
+
+export enum FlowStepStatus {
+  active = "ACTIVE",
+  inactive = "INACTIVE",
+  complete = "COMPLETE",
+}
+
+export type FlowStepVariant = "vertical" | "horizontal"
+export type FlowStepSize = "sm" | "lg"
 
 export interface FlowStepProps extends BoxProps {
   status?: FlowStepStatus
@@ -21,8 +25,8 @@ export interface FlowStepProps extends BoxProps {
 export const FlowStep: FC<FlowStepProps> = (props) => {
   const {
     status = FlowStepStatus.inactive,
-    variant = FlowStepVariant.vertical,
-    size = FlowStepSize.lg,
+    variant = "vertical",
+    size = "lg",
     preTitle,
     title,
     children,
@@ -34,7 +38,7 @@ export const FlowStep: FC<FlowStepProps> = (props) => {
 
   const isActive = status === FlowStepStatus.active
   const isComplete = status === FlowStepStatus.complete
-  const isSmall = size === FlowStepSize.sm
+  const isSmall = size === "sm"
   const PreTitle = isSmall ? LabelXs : LabelSm
   const Title = isSmall ? LabelSm : LabelLg
   const Description = isSmall ? BodySm : BodyMd
@@ -64,5 +68,3 @@ export const FlowStep: FC<FlowStepProps> = (props) => {
     </Box>
   )
 }
-
-export default FlowStep

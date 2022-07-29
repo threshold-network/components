@@ -1,20 +1,5 @@
 import { mode } from "@chakra-ui/theme-tools"
-
-export enum FlowStepStatus {
-  active = "ACTIVE",
-  inactive = "INACTIVE",
-  complete = "COMPLETE",
-}
-
-export enum FlowStepVariant {
-  vertical = "VERTICAL",
-  horizontal = "HORIZONTAL",
-}
-
-export enum FlowStepSize {
-  sm = "SM",
-  lg = "LG",
-}
+import { FlowStepStatus } from "../components/FlowStep"
 
 export const FlowStep = {
   parts: [
