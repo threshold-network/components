@@ -8,12 +8,6 @@ import { H4 } from "../Typography"
 
 export interface CountdownProps {
   targetDateInUnix: number
-  render: (
-    days: number,
-    hours: number,
-    minutes: number,
-    seconds: number
-  ) => JSX.Element
   children: (
     days: number,
     hours: number,
@@ -24,7 +18,6 @@ export interface CountdownProps {
 
 export const Countdown: FC<CountdownProps> = ({
   targetDateInUnix,
-  render,
   children,
 }) => {
   const [diff, setDiff] = useState(targetDateInUnix - dateToUnixTimestamp())
@@ -43,16 +36,5 @@ export const Countdown: FC<CountdownProps> = ({
   }, [targetDateInUnix])
   const { days, hours, minutes, seconds } = dateAs(diff)
 
-  if (render) {
-    return render(days, hours, minutes, seconds)
-  }
-
   return children(days, hours, minutes, seconds)
-
-  return (
-    <H4 color="brand.500" fontWeight={800}>
-      {addLeadingZero(hours)} : {addLeadingZero(minutes)} :{" "}
-      {addLeadingZero(seconds)}
-    </H4>
-  )
 }
