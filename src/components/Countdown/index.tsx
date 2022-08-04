@@ -8,6 +8,12 @@ import { H4 } from "../Typography"
 
 export interface CountdownProps {
   targetDateInUnix: number
+  onComplete?: (
+    days: number,
+    hours: number,
+    minutes: number,
+    seconds: number
+  ) => void
   children: (
     days: number,
     hours: number,
@@ -18,6 +24,7 @@ export interface CountdownProps {
 
 export const Countdown: FC<CountdownProps> = ({
   targetDateInUnix,
+  onComplete,
   children,
 }) => {
   const [diff, setDiff] = useState(targetDateInUnix - dateToUnixTimestamp())
@@ -26,6 +33,10 @@ export const Countdown: FC<CountdownProps> = ({
     const interval = setInterval(() => {
       const diff = targetDateInUnix - dateToUnixTimestamp()
       if (diff === 0) {
+        if (onComplete) {
+          const { days, hours, minutes, seconds } = dateAs(diff)
+          onComplete(days, hours, minutes, seconds)
+        }
         clearInterval(interval)
       }
 
