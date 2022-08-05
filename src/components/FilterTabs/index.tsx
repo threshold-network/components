@@ -1,5 +1,10 @@
 import { createContext, FC, useContext, useState } from "react"
-import { Button, ButtonGroup, useStyleConfig } from "@chakra-ui/react"
+import {
+  Button,
+  ButtonGroup,
+  ButtonGroupProps,
+  useStyleConfig,
+} from "@chakra-ui/react"
 import { FilterTabSize, FilterTabVariant } from "../../theme/FilterTab"
 
 export interface FilterTabProps {
@@ -8,7 +13,7 @@ export interface FilterTabProps {
   variant: FilterTabVariant
 }
 
-export interface FilterTabsProps {
+export interface FilterTabsProps extends ButtonGroupProps {
   variant?: FilterTabVariant
   size?: FilterTabSize
   selectedTabId?: string
@@ -37,7 +42,12 @@ const FilterTabsProvider: FC<TabsProviderProps> = (props) => {
     <FilterTabsContext.Provider
       value={{
         selectedTabId,
-        onTabClick: props.onTabClick || setSelectedTabId,
+        onTabClick: (tabId) => {
+          if (props.onTabClick) {
+            props.onTabClick(tabId)
+          }
+          setSelectedTabId(tabId)
+        },
       }}
     >
       {props.children}
@@ -68,6 +78,7 @@ export const FilterTabs: FC<FilterTabsProps> = ({
   size = "md",
   selectedTabId,
   onTabClick,
+  ...props
 }) => {
   const styles = useStyleConfig("FilterTabs", { variant })
 
@@ -76,7 +87,7 @@ export const FilterTabs: FC<FilterTabsProps> = ({
       onTabClick={onTabClick}
       selectedTabId={selectedTabId || tabs[0].tabId}
     >
-      <ButtonGroup spacing="3" size={size} sx={styles}>
+      <ButtonGroup spacing="3" size={size} sx={styles} {...props}>
         {tabs.map((tab) => {
           return (
             <FilterTab
