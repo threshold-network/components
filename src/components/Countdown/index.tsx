@@ -3,28 +3,26 @@ import {
   dateToUnixTimestamp,
   ONE_SEC_IN_MILISECONDS,
   dateAs,
+  addLeadingZero,
 } from "../../utils"
 import { H4 } from "../Typography"
 
 export interface CountdownProps {
   targetDateInUnix: number
-  onComplete?: (
-    days: number,
-    hours: number,
-    minutes: number,
-    seconds: number
-  ) => void
+  onComplete?: (targetDateInUnix: number) => void
+  withLeadingZeroes?: boolean
   children: (
-    days: number,
-    hours: number,
-    minutes: number,
-    seconds: number
+    days: string,
+    hours: string,
+    minutes: string,
+    seconds: string
   ) => JSX.Element
 }
 
 export const Countdown: FC<CountdownProps> = ({
   targetDateInUnix,
   onComplete,
+  withLeadingZeroes = false,
   children,
 }) => {
   const [diff, setDiff] = useState(targetDateInUnix - dateToUnixTimestamp())
@@ -34,8 +32,7 @@ export const Countdown: FC<CountdownProps> = ({
       const diff = targetDateInUnix - dateToUnixTimestamp()
       if (diff === 0) {
         if (onComplete) {
-          const { days, hours, minutes, seconds } = dateAs(diff)
-          onComplete(days, hours, minutes, seconds)
+          onComplete(targetDateInUnix)
         }
         clearInterval(interval)
       }
@@ -45,7 +42,14 @@ export const Countdown: FC<CountdownProps> = ({
 
     return () => clearInterval(interval)
   }, [targetDateInUnix])
-  const { days, hours, minutes, seconds } = dateAs(diff)
+  let { days, hours, minutes, seconds } = dateAs(diff)
+
+  if (withLeadingZeroes) {
+    days = addLeadingZero(Number(days))
+    hours = addLeadingZero(Number(hours))
+    minutes = addLeadingZero(Number(minutes))
+    seconds = addLeadingZero(Number(seconds))
+  }
 
   return children(days, hours, minutes, seconds)
 }

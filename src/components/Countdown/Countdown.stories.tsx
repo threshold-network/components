@@ -11,8 +11,7 @@ const Template: Story<CountdownProps> = (args) => {
       {(days, hours, minutes, seconds) => {
         return (
           <H4 color="brand.500" fontWeight={800}>
-            {addLeadingZero(hours)} : {addLeadingZero(minutes)} :{" "}
-            {addLeadingZero(seconds)}
+            {hours} : {minutes} : {seconds}
           </H4>
         )
       }}
@@ -23,6 +22,7 @@ const Template: Story<CountdownProps> = (args) => {
 export const Countdown = Template.bind({})
 Countdown.args = {
   targetDateInUnix: targetUnixTimestamp,
+  withLeadingZeroes: true,
 }
 
 export default {
