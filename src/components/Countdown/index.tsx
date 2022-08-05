@@ -22,7 +22,7 @@ export interface CountdownProps {
 export const Countdown: FC<CountdownProps> = ({
   targetDateInUnix,
   onComplete,
-  withLeadingZeroes = false,
+  withLeadingZeroes = true,
   children,
 }) => {
   const [diff, setDiff] = useState(targetDateInUnix - dateToUnixTimestamp())
