@@ -34,7 +34,13 @@ export const FlowStep: FC<FlowStepProps> = (props) => {
     isDescriptionArrowHidden = false,
     ...rest
   } = props
-  const styles = useMultiStyleConfig("FlowStep", props)
+
+  const styles = useMultiStyleConfig("FlowStep", {
+    status,
+    variant,
+    size,
+    ...rest,
+  })
 
   const isActive = status === FlowStepStatus.active
   const isComplete = status === FlowStepStatus.complete
@@ -61,8 +67,16 @@ export const FlowStep: FC<FlowStepProps> = (props) => {
               )}
               <Description>{children}</Description>
             </Box>
-          ) : (
+          ) : isDescriptionArrowHidden ? (
             children
+          ) : (
+            <Box display="flex">
+              <Icon
+                __css={styles.descriptionArrow}
+                as={IoArrowForwardCircleSharp}
+              />
+              <Box>{children}</Box>
+            </Box>
           ))}
       </Box>
     </Box>
