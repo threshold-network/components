@@ -1,12 +1,18 @@
 import { FC, ReactNode, useMemo } from "react"
 import { chakra, TextProps, useMultiStyleConfig } from "@chakra-ui/react"
 import { BodyLg, BodyMd, BodySm, BodyXs } from "../Typography"
-import { BoxLabelVariant, BoxLabelSize } from "../../theme/BoxLabel"
+import {
+  BoxLabelVariant,
+  BoxLabelSize,
+  BoxLabelStatus,
+} from "../../theme/BoxLabel"
 
 export interface BoxLabelProps extends TextProps {
   colorScheme?: BoxLabelVariant
   size?: BoxLabelSize
   icon?: ReactNode
+  status?: BoxLabelStatus
+  variant?: BoxLabelVariant
 }
 
 export const BoxLabel: FC<BoxLabelProps> = ({ ...props }) => {
