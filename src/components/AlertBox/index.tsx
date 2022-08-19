@@ -1,6 +1,14 @@
-import { Alert, AlertIcon, AlertProps, AlertStatus } from "@chakra-ui/react"
+import {
+  Alert,
+  AlertIcon,
+  AlertProps,
+  AlertStatus,
+  useColorMode,
+  Image,
+} from "@chakra-ui/react"
 import { CheckIcon, InfoIcon, WarningIcon } from "@chakra-ui/icons"
 import { FC } from "react"
+import magicAlertIcon from "../../static/images/MagicAlertIcon.png"
 
 const ALERT_BOX_STATUSES = {
   info: { icon: InfoIcon, colorScheme: "blue" },
@@ -23,10 +31,19 @@ export const AlertBox: FC<AlertBoxProps> = ({
   withIcon = true,
   ...restProps
 }) => {
+  const { colorMode } = useColorMode()
+
+  const isDarkMode = colorMode === "dark"
+
   if (status === "magic") {
     return (
-      <Alert status="info" {...restProps} backgroundColor="brand.100">
-        {withIcon && <AlertIcon color="brand.500" />}
+      <Alert
+        status="info"
+        backgroundColor={isDarkMode ? "rgba(255, 255, 255, 0.08)" : "brand.100"}
+        borderColor={isDarkMode ? "brand.400" : "brand.500"}
+        {...restProps}
+      >
+        {withIcon && <Image h="20px" src={magicAlertIcon} mr={2} />}
         {children}
       </Alert>
     )

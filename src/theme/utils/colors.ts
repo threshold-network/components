@@ -11,7 +11,7 @@ export const colors = {
     100: "#D5C6FF",
     // 200
     300: "#9974FF",
-    // 400
+    400: "#8B3AFF",
     500: "#7D00FF", // main Threshold brand color
     550: "#7C47EE", // main Threshold brand color - DARK MODE
     600: "#BD30FF",
