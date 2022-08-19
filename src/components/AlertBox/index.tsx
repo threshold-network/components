@@ -39,9 +39,9 @@ export const AlertBox: FC<AlertBoxProps> = ({
     return (
       <Alert
         status="info"
-        {...restProps}
         backgroundColor={isDarkMode ? "rgba(255, 255, 255, 0.08)" : "brand.100"}
         borderColor={isDarkMode ? "brand.400" : "brand.500"}
+        {...restProps}
       >
         {withIcon && <Image h="20px" src={magicAlertIcon} mr={2} />}
         {children}
