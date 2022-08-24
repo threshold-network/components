@@ -1,30 +1,17 @@
-import { FC, useEffect, useState } from "react"
+import { useState, useEffect } from "react"
 import {
   dateToUnixTimestamp,
   ONE_SEC_IN_MILISECONDS,
-  dateAs,
+  unixTimestampToTimeUnits,
   addLeadingZero,
-} from "../../utils"
-import { H4 } from "../Typography"
+  TimeUnits,
+} from "../utils"
 
-export interface CountdownProps {
-  targetDateInUnix: number
+const useCountdown = (
+  targetDateInUnix: number,
+  addLeadingZeroes?: boolean,
   onComplete?: (targetDateInUnix: number) => void
-  withLeadingZeroes?: boolean
-  children: (
-    days: string,
-    hours: string,
-    minutes: string,
-    seconds: string
-  ) => JSX.Element
-}
-
-export const Countdown: FC<CountdownProps> = ({
-  targetDateInUnix,
-  onComplete,
-  withLeadingZeroes = true,
-  children,
-}) => {
+): TimeUnits => {
   const [diff, setDiff] = useState(targetDateInUnix - dateToUnixTimestamp())
 
   useEffect(() => {
@@ -42,14 +29,21 @@ export const Countdown: FC<CountdownProps> = ({
 
     return () => clearInterval(interval)
   }, [targetDateInUnix])
-  let { days, hours, minutes, seconds } = dateAs(diff)
+  let { days, hours, minutes, seconds } = unixTimestampToTimeUnits(diff)
 
-  if (withLeadingZeroes) {
+  if (addLeadingZeroes) {
     days = addLeadingZero(Number(days))
     hours = addLeadingZero(Number(hours))
     minutes = addLeadingZero(Number(minutes))
     seconds = addLeadingZero(Number(seconds))
   }
 
-  return children(days, hours, minutes, seconds)
+  return {
+    days,
+    hours,
+    minutes,
+    seconds,
+  }
 }
+
+export default useCountdown

@@ -7,14 +7,14 @@ export const dateToUnixTimestamp = (date: Date = new Date()): number => {
   return Math.floor(date.getTime() / ONE_SEC_IN_MILISECONDS)
 }
 
-export const dateAs = (
-  targetUnix: number
-): {
+export interface TimeUnits {
   days: string
   hours: string
   minutes: string
   seconds: string
-} => {
+}
+
+export const unixTimestampToTimeUnits = (targetUnix: number): TimeUnits => {
   const days = Math.floor(targetUnix / ONE_DAY_IN_SECONDS)
   const hours = Math.floor(
     (targetUnix % ONE_DAY_IN_SECONDS) / ONE_HOUR_IN_SECONDS
