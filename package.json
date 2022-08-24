@@ -62,7 +62,9 @@
     "react-number-format": "^4.7.3",
     "react-router-dom": "6.2.1"
   },
-  "dependencies": {},
+  "dependencies": {
+    "ethereum-blockies-base64": "^1.0.2"
+  },
   "scripts": {
     "build": "rollup -c",
     "storybook": "start-storybook -p 6006",

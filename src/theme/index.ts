@@ -14,6 +14,7 @@ import { fonts } from "./fonts"
 import { BoxLabel } from "./BoxLabel"
 import { colors } from "./utils"
 import { FlowStep } from "./FlowStep"
+import { DetailedLinkListItem } from "./DetailedLinkListItem"
 
 export const defaultTheme = {
   fonts,
@@ -32,6 +33,7 @@ export const defaultTheme = {
     FilterTab,
     FilterTabs,
     FlowStep,
+    DetailedLinkListItem,
   },
 }
 
