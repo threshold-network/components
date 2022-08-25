@@ -28,7 +28,7 @@ const useCountdown = (
     }, ONE_SEC_IN_MILISECONDS)
 
     return () => clearInterval(interval)
-  }, [targetDateInUnix])
+  }, [targetDateInUnix, onComplete])
   let { days, hours, minutes, seconds } = unixTimestampToTimeUnits(diff)
 
   if (addLeadingZeroes) {
