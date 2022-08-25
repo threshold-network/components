@@ -1,4 +1,2 @@
-export const addLeadingZero = (relativeTime: number): string =>
-  relativeTime >= 0 && relativeTime <= 9
-    ? `0${relativeTime}`
-    : relativeTime.toString()
+export const addLeadingZero = (num: number): string =>
+  num >= 0 && num <= 9 ? `0${num}` : num.toString()
