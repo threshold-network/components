@@ -7,7 +7,7 @@ import {
   TimeUnits,
 } from "../utils"
 
-const useCountdown = (
+export const useCountdown = (
   targetDateInUnix: number,
   addLeadingZeroes?: boolean,
   onComplete?: (targetDateInUnix: number) => void
@@ -45,5 +45,3 @@ const useCountdown = (
     seconds,
   }
 }
-
-export default useCountdown
