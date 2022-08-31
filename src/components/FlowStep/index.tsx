@@ -50,18 +50,18 @@ export const FlowStep: FC<FlowStepProps> = (props) => {
   const Description = isSmall ? BodySm : BodyMd
 
   return (
-    <Box __css={styles.wrapper} {...rest}>
-      <Box __css={styles.divider} />
-      <Box __css={styles.subWrapper}>
-        <PreTitle __css={styles.preTitle}>{preTitle}</PreTitle>
-        <Title __css={styles.title}>{title}</Title>
+    <Box sx={styles.wrapper} {...rest}>
+      <Box sx={styles.divider} />
+      <Box sx={styles.subWrapper}>
+        <PreTitle sx={styles.preTitle}>{preTitle}</PreTitle>
+        <Title sx={styles.title}>{title}</Title>
         {!isDescriptionHidden &&
           !isComplete &&
           (typeof children === "string" ? (
             <Box display="flex">
               {!isDescriptionArrowHidden && isActive && (
                 <Icon
-                  __css={styles.descriptionArrow}
+                  sx={styles.descriptionArrow}
                   as={IoArrowForwardCircleSharp}
                 />
               )}
@@ -72,7 +72,7 @@ export const FlowStep: FC<FlowStepProps> = (props) => {
           ) : (
             <Box display="flex">
               <Icon
-                __css={styles.descriptionArrow}
+                sx={styles.descriptionArrow}
                 as={IoArrowForwardCircleSharp}
               />
               <Box>{children}</Box>
