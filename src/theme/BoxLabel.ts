@@ -1,5 +1,6 @@
 import { ComponentStyleConfig } from "@chakra-ui/react"
 import { colors } from "./utils"
+import { mode } from "@chakra-ui/theme-tools"
 
 export type BoxLabelVariant = "solid" | "outline"
 export type BoxLabelSize = "xs" | "sm" | "md" | "lg"
@@ -29,33 +30,33 @@ export const BoxLabel: ComponentStyleConfig = {
 
       return {
         bg: {
-          primary: "brand.50",
-          secondary: "gray.50",
+          primary: mode("brand.50", "whiteAlpha.200")(props),
+          secondary: mode("gray.50", "whiteAlpha.100")(props),
           magic: colors.gradient[3],
-          success: "green.50",
-          warning: "yellow.50",
-          error: "red.50",
+          success: mode("green.100", "green.200"),
+          warning: mode("yellow.100", "yellow.200"),
+          error: mode("red.100", "red.200"),
         }[status],
         border: "none",
         color: {
-          primary: "brand.700",
-          secondary: "gray.700",
+          primary: mode("brand.700", "brand.100")(props),
+          secondary: mode("gray.700", "gray.100")(props),
           magic: "white",
-          success: "green.700",
-          warning: "yellow.700",
-          error: "red.700",
+          success: "green.800",
+          warning: "yellow.800",
+          error: "red.800",
         }[status],
       }
     },
     outline: (props) => {
       const status: BoxLabelStatus = props.status || "primary"
       const colorMap: ColorMap = {
-        primary: "brand.700",
-        secondary: "gray.700",
-        magic: "brand.500",
-        success: "green.500",
-        warning: "yellow.500",
-        error: "red.500",
+        primary: mode("brand.700", "brand.300")(props),
+        secondary: mode("gray.700", "gray.300")(props),
+        magic: mode("brand.500", "brand.100")(props),
+        success: mode("green.500", "green.300")(props),
+        warning: mode("yellow.500", "yellow.300")(props),
+        error: mode("red.500", "red.300")(props),
       }
 
       return {
