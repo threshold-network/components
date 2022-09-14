@@ -1,6 +1,6 @@
 import { ChakraComponent, useStyleConfig, Button } from "@chakra-ui/react"
 import { useContext } from "react"
-import { FilterTabsContext } from "./context"
+import { FilterTabListContext } from "./context"
 
 export interface FilterTabComponent
   extends ChakraComponent<"button", { tabId: string }> {}
@@ -10,7 +10,8 @@ export const FilterTab: FilterTabComponent = ({
   children,
   ...props
 }) => {
-  const { selectedTabId, variant, onTabClick } = useContext(FilterTabsContext)
+  const { selectedTabId, variant, onTabClick } =
+    useContext(FilterTabListContext)
   const isActive = selectedTabId === tabId
   const styles = useStyleConfig("FilterTab", { isActive, variant })
 
