@@ -1,35 +1,36 @@
 import React from "react"
 import { Meta, Story } from "@storybook/react"
 import { Container } from "@chakra-ui/react"
-import { FilterTabs as FilterTabsComponent, FilterTabsProps } from "./"
+import {
+  FilterTabList as FilterTabListComponent,
+  FilterTab as FilterTabComponent,
+  FilterTabListProps,
+} from "./"
 
-interface FilterTabsStoryProps extends FilterTabsProps {}
+interface FilterTabListStoryProps extends FilterTabListProps {}
 
-const Template: Story<FilterTabsStoryProps> = (args) => {
+const Template: Story<FilterTabListStoryProps> = (args) => {
   return (
     <Container>
-      <FilterTabsComponent {...args} />
+      <FilterTabListComponent {...args}>
+        <FilterTabComponent tabId={"1"}>Filter Tab 1</FilterTabComponent>
+        <FilterTabComponent tabId={"2"}>Filter Tab 2</FilterTabComponent>
+      </FilterTabListComponent>
     </Container>
   )
 }
 
-export const FilterTabs = Template.bind({})
+export const FilterTabList = Template.bind({})
 
-FilterTabs.args = {
-  tabs: [
-    {
-      title: "Tab 1",
-      tabId: "1",
-    },
-    { title: "Tab 2", tabId: "2" },
-    { title: "Tab 3", tabId: "3" },
-    { title: "Tab 4", tabId: "4" },
-  ],
+FilterTabList.args = {
+  variant: "primary",
+  size: "md",
+  selectedTabId: "1",
 }
 
 export default {
   title: "FilterTabs",
-  component: FilterTabs,
+  component: FilterTabList,
   argTypes: {
     tabs: {
       description: "The tabs that will be rendered",

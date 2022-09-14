@@ -4,44 +4,41 @@ import {
   ButtonGroup,
   ButtonGroupProps,
   useStyleConfig,
+  ChakraComponent,
 } from "@chakra-ui/react"
 import { FilterTabSize, FilterTabVariant } from "../../theme/FilterTab"
 
-export interface FilterTabProps {
-  title: string
-  tabId: string
-  variant: FilterTabVariant
-}
+export interface FilterTabComponent
+  extends ChakraComponent<"button", { tabId: string }> {}
 
-export interface FilterTabsProps extends ButtonGroupProps {
+export interface FilterTabListProps extends ButtonGroupProps {
   variant?: FilterTabVariant
   size?: FilterTabSize
   selectedTabId?: string
   onTabClick?: (tabId: string) => void
-  tabs: {
-    title: string
-    tabId: string
-    onClick?: (tabId: string) => void
-  }[]
 }
 
 const FilterTabsContext = createContext({
   selectedTabId: "",
+  variant: "primary",
   onTabClick: (tabId: string) => {},
 })
 
 interface TabsProviderProps {
   selectedTabId?: string
+  variant?: string
   onTabClick?: (tabId: string) => void
 }
 
 const FilterTabsProvider: FC<TabsProviderProps> = (props) => {
   const [selectedTabId, setSelectedTabId] = useState(props.selectedTabId || "")
+  const variant = props.variant ? props.variant : "primary"
 
   return (
     <FilterTabsContext.Provider
       value={{
         selectedTabId,
+        variant,
         onTabClick: (tabId) => {
           if (props.onTabClick) {
             props.onTabClick(tabId)
@@ -55,8 +52,12 @@ const FilterTabsProvider: FC<TabsProviderProps> = (props) => {
   )
 }
 
-const FilterTab: FC<FilterTabProps> = ({ tabId, title, variant }) => {
-  const { selectedTabId, onTabClick } = useContext(FilterTabsContext)
+export const FilterTab: FilterTabComponent = ({
+  tabId,
+  children,
+  ...props
+}) => {
+  const { selectedTabId, variant, onTabClick } = useContext(FilterTabsContext)
   const isActive = selectedTabId === tabId
   const styles = useStyleConfig("FilterTab", { isActive, variant })
 
@@ -66,18 +67,19 @@ const FilterTab: FC<FilterTabProps> = ({ tabId, title, variant }) => {
       variant={isActive ? "outline" : "ghost"}
       onClick={() => onTabClick(tabId)}
       sx={styles}
+      {...props}
     >
-      {title}
+      {children}
     </Button>
   )
 }
 
-export const FilterTabs: FC<FilterTabsProps> = ({
-  tabs,
+export const FilterTabList: FC<FilterTabListProps> = ({
   variant = "primary",
   size = "md",
   selectedTabId,
   onTabClick,
+  children,
   ...props
 }) => {
   const styles = useStyleConfig("FilterTabs", { variant })
@@ -85,19 +87,11 @@ export const FilterTabs: FC<FilterTabsProps> = ({
   return (
     <FilterTabsProvider
       onTabClick={onTabClick}
-      selectedTabId={selectedTabId || tabs[0].tabId}
+      variant={variant}
+      selectedTabId={selectedTabId}
     >
       <ButtonGroup spacing="3" size={size} sx={styles} {...props}>
-        {tabs.map((tab) => {
-          return (
-            <FilterTab
-              variant={variant}
-              key={tab.tabId}
-              title={tab.title}
-              tabId={tab.tabId}
-            />
-          )
-        })}
+        {children}
       </ButtonGroup>
     </FilterTabsProvider>
   )
