@@ -8,7 +8,9 @@ export const FilterTabs: ComponentStyleConfig = {
   },
   variants: {
     primary: (props) => ({
-      bgColor: mode("white", "gray.900")(props),
+      bgColor: mode("white", "gray.800")(props),
+      border: "1px solid",
+      borderColor: "gray.700",
       boxShadow: "md",
       width: "full",
     }),
