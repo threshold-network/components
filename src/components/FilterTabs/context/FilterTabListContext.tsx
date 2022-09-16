@@ -1,4 +1,8 @@
-import { createContext, FC, useState } from "react"
+import { createContext, FC, useContext, useState } from "react"
+
+export const useFilterTabListContext = () => {
+  return useContext(FilterTabListContext)
+}
 
 export const FilterTabListContext = createContext({
   selectedTabId: "",
