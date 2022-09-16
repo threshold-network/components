@@ -1,16 +1,16 @@
 import { ButtonGroupProps, useStyleConfig, ButtonGroup } from "@chakra-ui/react"
 import { FC } from "react"
 import { FilterTabVariant, FilterTabSize } from "../../theme/FilterTab"
-import { FilterTabListProvider } from "./context"
+import { FilterTabsProvider } from "./context"
 
-export interface FilterTabListProps extends ButtonGroupProps {
+export interface FilterTabsProps extends ButtonGroupProps {
   variant?: FilterTabVariant
   size?: FilterTabSize
   selectedTabId?: string
   onTabClick?: (tabId: string) => void
 }
 
-export const FilterTabList: FC<FilterTabListProps> = ({
+export const FilterTabs: FC<FilterTabsProps> = ({
   variant = "primary",
   size = "md",
   selectedTabId,
@@ -21,7 +21,7 @@ export const FilterTabList: FC<FilterTabListProps> = ({
   const styles = useStyleConfig("FilterTabs", { variant })
 
   return (
-    <FilterTabListProvider
+    <FilterTabsProvider
       onTabClick={onTabClick}
       variant={variant}
       selectedTabId={selectedTabId}
@@ -29,6 +29,6 @@ export const FilterTabList: FC<FilterTabListProps> = ({
       <ButtonGroup spacing="3" size={size} sx={styles} {...props}>
         {children}
       </ButtonGroup>
-    </FilterTabListProvider>
+    </FilterTabsProvider>
   )
 }

@@ -1,29 +1,27 @@
 import { createContext, FC, useContext, useState } from "react"
 
-export const useFilterTabListContext = () => {
-  return useContext(FilterTabListContext)
+export const useFilterTabsContext = () => {
+  return useContext(FilterTabsContext)
 }
 
-export const FilterTabListContext = createContext({
+export const FilterTabsContext = createContext({
   selectedTabId: "",
   variant: "primary",
   onTabClick: (tabId: string) => {},
 })
 
-export interface FilterTabListProviderProps {
+export interface FilterTabsProviderProps {
   selectedTabId?: string
   variant?: string
   onTabClick?: (tabId: string) => void
 }
 
-export const FilterTabListProvider: FC<FilterTabListProviderProps> = (
-  props
-) => {
+export const FilterTabsProvider: FC<FilterTabsProviderProps> = (props) => {
   const [selectedTabId, setSelectedTabId] = useState(props.selectedTabId || "")
   const variant = props.variant ? props.variant : "primary"
 
   return (
-    <FilterTabListContext.Provider
+    <FilterTabsContext.Provider
       value={{
         selectedTabId,
         variant,
@@ -36,6 +34,6 @@ export const FilterTabListProvider: FC<FilterTabListProviderProps> = (
       }}
     >
       {props.children}
-    </FilterTabListContext.Provider>
+    </FilterTabsContext.Provider>
   )
 }

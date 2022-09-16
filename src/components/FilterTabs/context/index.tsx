@@ -1,1 +1,1 @@
-export * from "./FilterTabListContext"
+export * from "./FilterTabsContext"
