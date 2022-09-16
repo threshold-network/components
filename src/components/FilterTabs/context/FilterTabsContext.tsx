@@ -1,20 +1,28 @@
 import { createContext, FC, useContext, useState } from "react"
 
 export const useFilterTabsContext = () => {
-  return useContext(FilterTabsContext)
+  const context = useContext(FilterTabsContext)
+
+  if (!context) {
+    throw new Error(
+      "FilterTabs context was used outside of <FilterTabs> component. Please wrap your component with <FilterTab></FilterTabs> to create a proper context."
+    )
+  }
+  return context
 }
 
-export const FilterTabsContext = createContext({
-  selectedTabId: "",
-  variant: "primary",
-  onTabClick: (tabId: string) => {},
-})
-
-export interface FilterTabsProviderProps {
-  selectedTabId?: string
-  variant?: string
-  onTabClick?: (tabId: string) => void
+export interface FilterTabsContextProps {
+  selectedTabId: string
+  variant: string
+  onTabClick: (tabId: string) => void
 }
+
+export const FilterTabsContext = createContext<
+  FilterTabsContextProps | undefined
+>(undefined)
+
+export interface FilterTabsProviderProps
+  extends Partial<FilterTabsContextProps> {}
 
 export const FilterTabsProvider: FC<FilterTabsProviderProps> = (props) => {
   const [selectedTabId, setSelectedTabId] = useState(props.selectedTabId || "")
