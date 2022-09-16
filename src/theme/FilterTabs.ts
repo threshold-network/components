@@ -10,7 +10,7 @@ export const FilterTabs: ComponentStyleConfig = {
     primary: (props) => ({
       bgColor: mode("white", "gray.800")(props),
       border: "1px solid",
-      borderColor: "gray.700",
+      borderColor: "gray.100",
       boxShadow: "md",
       width: "full",
     }),
