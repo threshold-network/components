@@ -1,11 +1,13 @@
+import React from "react"
 import { Meta, Story } from "@storybook/react"
+import { Icon } from "@chakra-ui/react"
+import { FiAlertCircle, IoSparklesSharp } from "react-icons/all"
 import { BoxLabel as BoxLabelComponent, BoxLabelProps } from "./index"
 import { IconMap } from "../../types"
-import { FiAlertCircle, IoSparklesSharp } from "react-icons/all"
-import React from "react"
-import { Icon } from "@chakra-ui/react"
 
-interface BoxLabelStoryProps extends BoxLabelProps {}
+interface BoxLabelStoryProps extends BoxLabelProps {
+  icon: string
+}
 
 const iconMap: IconMap = {
   Sparkle: <Icon as={IoSparklesSharp} />,
@@ -13,8 +15,10 @@ const iconMap: IconMap = {
 }
 
 const Template: Story<BoxLabelStoryProps> = (args) => {
+  const icon = iconMap[args.icon]
+
   return (
-    <BoxLabelComponent {...args} icon={args.icon}>
+    <BoxLabelComponent {...args} icon={icon}>
       Simple Box Label
     </BoxLabelComponent>
   )
@@ -31,8 +35,8 @@ export default {
         type: "select",
         options: {
           Undefined: undefined,
-          Sparkle: iconMap.Sparkle,
-          Alert: iconMap.Alert,
+          Sparkle: "Sparkle",
+          Alert: "Alert",
         },
       },
     },
