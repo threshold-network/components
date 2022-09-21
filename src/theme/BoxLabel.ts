@@ -33,9 +33,9 @@ export const BoxLabel: ComponentStyleConfig = {
           primary: mode("brand.50", "whiteAlpha.200")(props),
           secondary: mode("gray.50", "whiteAlpha.100")(props),
           magic: colors.gradient[3],
-          success: mode("green.100", "green.200"),
-          warning: mode("yellow.100", "yellow.200"),
-          error: mode("red.100", "red.200"),
+          success: mode("green.100", "green.200")(props),
+          warning: mode("yellow.100", "yellow.200")(props),
+          error: mode("red.100", "red.200")(props),
         }[status],
         border: "none",
         color: {
