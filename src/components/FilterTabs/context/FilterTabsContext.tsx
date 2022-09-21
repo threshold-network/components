@@ -1,4 +1,4 @@
-import { createContext, FC, useContext, useState } from "react"
+import { createContext, FC, useContext, useEffect, useState } from "react"
 
 export const useFilterTabsContext = () => {
   const context = useContext(FilterTabsContext)
@@ -25,7 +25,16 @@ export interface FilterTabsProviderProps
   extends Partial<FilterTabsContextProps> {}
 
 export const FilterTabsProvider: FC<FilterTabsProviderProps> = (props) => {
-  const [selectedTabId, setSelectedTabId] = useState(props.selectedTabId || "")
+  const { selectedTabId: selectedTabIdFromProps } = props
+
+  const [selectedTabId, setSelectedTabId] = useState(
+    selectedTabIdFromProps || ""
+  )
+
+  useEffect(() => {
+    setSelectedTabId(selectedTabIdFromProps || "")
+  }, [selectedTabIdFromProps])
+
   const variant = props.variant ? props.variant : "primary"
 
   return (
