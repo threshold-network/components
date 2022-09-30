@@ -24,7 +24,6 @@ export const FilterTab: ComponentStyleConfig = {
         color: mode("brand.500", "brand.100")(props),
         borderColor: mode("gray.50", "gray.300")(props),
         _hover: {
-          border: mode("1px solid black", "none")(props),
           bg: mode("#F2EDFF", "gray.700")(props),
         },
       },
