@@ -5,6 +5,7 @@ export const colors = {
     1: "linear-gradient(to bottom right, #7D00FF, #7F00AC)",
     2: "linear-gradient(to bottom right, #7D00FF, #9D21FF)",
     3: "linear-gradient(to bottom right, #BD30FF, #7D00FF)",
+    4: "linear-gradient(to bottom right, #F0E1FF, #D7C9FF)",
   },
   brand: {
     50: "#FCF9FF",
