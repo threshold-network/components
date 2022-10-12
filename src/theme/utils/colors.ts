@@ -16,9 +16,9 @@ export const colors = {
     500: "#7D00FF", // main Threshold brand color
     550: "#7C47EE", // main Threshold brand color - DARK MODE
     600: "#BD30FF",
-    700: "#4E2E99",
-    800: "#3B257A",
-    900: "#1C0758",
+    700: "#4A2E99",
+    800: "#250F66",
+    900: "#150640",
   },
   gray: {
     ...theme.colors.gray,
