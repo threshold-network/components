@@ -1,4 +1,10 @@
-import { getColor, mode } from "@chakra-ui/theme-tools"
+import { progressAnatomy as parts } from "@chakra-ui/anatomy"
+import {
+  getColor,
+  mode,
+  PartsStyleFunction,
+  SystemStyleFunction,
+} from "@chakra-ui/theme-tools"
 
 // adapted from:  https://codesandbox.io/s/chakra-ui-theme-extension-w5u2n?file=/src/theme/Progress/index.js
 const multiSegmentFilledTrack = (props: any) => {
@@ -6,7 +12,7 @@ const multiSegmentFilledTrack = (props: any) => {
 
   const breakpoints = []
   let totalPct = 0
-  const trackColor = getColor(theme, mode("gray.100", "gray.600")(props))
+  const trackColor = getColor(theme, mode("gray.100", "gray.300")(props))
 
   // @ts-ignore
   values.forEach(({ color: fillColor, value }) => {
@@ -42,10 +48,43 @@ const multiSegmentFilledTrack = (props: any) => {
   }
 }
 
+const baseStyleFilledTrack: SystemStyleFunction = (props) => {
+  const { colorScheme, theme, isIndeterminate } = props
+
+  const darkModeColorValue = colorScheme === "brand" ? "550" : "200"
+  const bgColor = mode(
+    `${colorScheme}.500`,
+    `${colorScheme}.${darkModeColorValue}`
+  )(props)
+
+  const gradient = `linear-gradient(
+    to right,
+    transparent 0%,
+    ${getColor(theme, bgColor)} 50%,
+    transparent 100%
+  )`
+
+  return {
+    ...(isIndeterminate ? { bgImage: gradient } : { bgColor }),
+  }
+}
+
+const baseStyleTrack: SystemStyleFunction = (props) => {
+  return {
+    bg: mode("gray.100", "gray.300")(props),
+  }
+}
+
+const baseStyle: PartsStyleFunction<typeof parts> = (props) => ({
+  track: baseStyleTrack(props),
+  filledTrack: baseStyleFilledTrack(props),
+})
+
 export const Progress = {
   defaultProps: {
     colorScheme: "whiteAlpha",
   },
+  baseStyle,
   variants: {
     multiSegment: (props: any) => ({
       track: {
