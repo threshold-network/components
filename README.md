@@ -1,10 +1,18 @@
-# Threshold Network React Components
+# Threshold Network Web3 Design System
 
-This repo contains reusable React components for Threshold Network.
+This library is used by our team to build products with a consistent user experience.
+
+When we first were deciding how we wanted to structure a design system, we evaluated several options to see what could be used for a web3 product. The web3 space has several components that are unique and important to the UX of the application, e.g. transaction modals and wallet interactions. No design system fully covered these use cases, so we decided to customize our own on top of an open source Chakra library.
+
+If you use this in your product, we ask that you link back to this repo.
+
+This ReadMe document is structured into two parts. The first part outlines how to use the reusable React components. The second outlines design documentation for each component. For the Figma library, you can duplicate the Figma file [here](https://www.figma.com/file/zZi2fYDUjWEMPQJWAt8VWv/Threshold-DS?node-id=3436%3A24296).
+
+# Part 1: React Components
+
+Refer here for instructions on how to use this repo's reusable React components for Threshold Network.
 
 ## Setup
-
----
 
 ### Install packages
 
@@ -15,8 +23,6 @@ This repo contains reusable React components for Threshold Network.
 `yarn run storybook`
 
 ## Use package locally in different project
-
----
 
 ### Build the project
 
@@ -53,8 +59,20 @@ example:
 
 `import { H1 } from "@threshold-network/components"`
 
-#### Note
+#### ✍️ NOTE
 
 After executing `yarn pack` yarn caches the package so any changes made will not be saved after re-doing `yarn pack`
 until you clean the yarn cache (`yarn cache clean`) or just change the name of the packed file specified in `--filename`
 argument.
+
+# Part 2: Design System Documentation
+
+Below you will find the design system documentation, separated by section. For the Figma library, you can duplicate the Figma file [here](https://www.figma.com/file/zZi2fYDUjWEMPQJWAt8VWv/Threshold-DS?node-id=3436%3A24296).
+
+[ WORK IN PROGRESS ]
+
+## Theming
+## Atoms
+## Molecules
+## Organisms
+## Layouts
