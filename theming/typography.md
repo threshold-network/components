@@ -1,4 +1,4 @@
-\*\*\*\*# Typography
+# Typography
 
 The typography system is a foundation for readable and visually consistent communication. Use the following as a guideline for laying out paragraphs and text in Threshold styles.
 
