@@ -1,4 +1,4 @@
-# Typography
+\*\*\*\*# Typography
 
 The typography system is a foundation for readable and visually consistent communication. Use the following as a guideline for laying out paragraphs and text in Threshold styles.
 
@@ -10,7 +10,7 @@ The Threshold type system is built on 8pt scale, and the base font is 14pt (one 
 
 Text will be difficult to read if it is too close to the background color. With accessible design in mind, we follow the WCAG standard. This maintains an AAA level of contrast ratio, i.e. 7:1 or more between the text and the background color.
 
-## Spacing 
+## Spacing
 
 ![spacing](https://user-images.githubusercontent.com/57226633/195710672-98fa79f3-1c17-46fd-b401-dd558432e372.png)
 
@@ -26,7 +26,7 @@ This font is open source and available from Google Fonts. You can access it here
 
 ## Typography Styles
 
-The following type styles are used in the Threshold system. Use heading styles for heading elements, body styles for body text, and button styles for buttons. 
+The following type styles are used in the Threshold system. Use heading styles for heading elements, body styles for body text, and button styles for buttons.
 
 ![TypeStyles](https://user-images.githubusercontent.com/57226633/195709389-12e2df47-52c9-4c64-8f9a-71172115e747.png)
 
