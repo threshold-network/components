@@ -1,3 +1,5 @@
+![Thumbnail](https://user-images.githubusercontent.com/57226633/195890926-fc2b7a57-b11c-4b70-962c-5306d3bcdef0.png)
+
 # Threshold Network Web3 Design System
 
 This library is used by our team to build products with a consistent user experience.
@@ -8,7 +10,7 @@ If you use this in your product, we ask that you link back to this repo.
 
 This ReadMe document is structured into two parts. The first part outlines how to use the reusable React components. The second outlines design documentation for each component. For the Figma library, you can duplicate the Figma file [here](https://www.figma.com/file/zZi2fYDUjWEMPQJWAt8VWv/Threshold-DS?node-id=3436%3A24296).
 
-# Part 1: React Components
+# I. React Components
 
 Refer here for instructions on how to use this repo's reusable React components for Threshold Network.
 
@@ -65,18 +67,72 @@ After executing `yarn pack` yarn caches the package so any changes made will not
 until you clean the yarn cache (`yarn cache clean`) or just change the name of the packed file specified in `--filename`
 argument.
 
-# Part 2: Design System Documentation
+# II. Design System Documentation
+
+[WORK IN PROGRESS]
 
 Below you will find the design system documentation, separated by section. For the Figma library, you can duplicate the Figma file [here](https://www.figma.com/file/zZi2fYDUjWEMPQJWAt8VWv/Threshold-DS?node-id=3436%3A24296).
 
-[ WORK IN PROGRESS ]
+## 🎯 Goals
+* Compile important web3 components.
+* Make a resource that was open source for the community.
+* Document our research and thinking for these components.
+* Create designs adn make changes across many files for any Threshold project faster.
+* Ensure that designs are consistent across many designers and engineers.
 
-## Theming
+## 📓 Table of Contents
 
-## Atoms
+### 🎨 Theming
+  * Typography
+  * Grids
+  * Logo
+  * Color
+  * Icon Library
+  * Illustrations
 
-## Molecules
+### 🔹 Atoms
+  * Avatar
+  * Badge
+  * Banner
+  * Box Badge
+  * Buttons
+  * Card
+  * Divider
+  * Inputs
+  * Notification
+  * Progress Bar
+  * Pending
+  * Selection
+  * Shadows
+  * Skeleton
+  * Slider
+  * Steps
+  * Timer
+  * Tooltip
 
-## Organisms
-
-## Layouts
+### 🔷 Molecules
+  * Alert
+  * Feature Banner
+  * Filter Tab
+  * Form
+  * Plan Select
+  * Toast
+  * Line Inline
+  * Photo Uploader
+  * Statistics
+  * Voting
+  
+### 💠 Organisms
+  * Applications
+  * Coverage Pool
+  * Modals
+  * Navigation
+  * Rewards
+  * Staking
+  * Table
+  * TVL
+  * Upgrade
+  * Wallet
+  
+### 💻 Layouts
+  * Page
