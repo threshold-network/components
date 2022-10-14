@@ -72,7 +72,11 @@ Below you will find the design system documentation, separated by section. For t
 [ WORK IN PROGRESS ]
 
 ## Theming
+
 ## Atoms
+
 ## Molecules
+
 ## Organisms
+
 ## Layouts
