@@ -2,6 +2,10 @@
 
 This repo contains reusable React components for Threshold Network.
 
+*For design documentation on these components, refer to the repo on Design System documentation [here](https://github.com/threshold-network/design-system-docs).*
+
+*You can also duplicate the Figma file [here](https://www.figma.com/file/zZi2fYDUjWEMPQJWAt8VWv/Threshold-DS?node-id=3436%3A24296).*
+
 ## Setup
 
 ---
