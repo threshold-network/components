@@ -17,57 +17,50 @@ interface FileUploaderProps {
   onFileUpload: (file: File | null) => void
   size?: "lg" | "sm"
   headerHelperText?: string
+  footerHelperText?: string
+  accept?: string
 }
 
 export const FileUploader: FC<BoxProps & FileUploaderProps> = (p) => {
-  const { size = "lg", headerHelperText, ...props } = p
+  const {
+    size = "lg",
+    headerHelperText,
+    footerHelperText,
+    accept,
+    ...props
+  } = p
   const dragAreaRef = useRef<HTMLLabelElement>(null)
+
   // registers the drag events on the drag area
   const isCurrentlyDragging = useIsCurrentlyDragging({
     dragAreaRef,
   })
+
   const inputRef = useRef<HTMLInputElement>(null)
+
   const [isUploaded, setIsUploaded] = useState(false)
+
   const [file, setFile] = useState<File | null>(null)
-  const [error, setError] = useState(false)
+
   const styles = useStyleConfig("FileUploader", {
     ...p,
     isCurrentlyDragging,
     size,
   })
 
-  const validateFile = (file: File) => {
-    // if (types && !checkType(file, types)) {
-    //   // types included and type not in them
-    //   setError(true)
-    //   if (onTypeError) onTypeError("File type is not supported")
-    //   return false
-    // }
-
-    return true
-  }
-
-  const blockEvent = (event: any) => {
+  const _handleDrop = (event: any) => {
     event.preventDefault()
     event.stopPropagation()
-  }
-
-  const _handleDrop = (event: any) => {
-    blockEvent(event)
     const eventFilesFromDrop = event?.dataTransfer?.files
     const eventFilesFromInput = event.target.files
     const files = eventFilesFromDrop || eventFilesFromInput
 
     if (files.length > 0) {
       const [file] = files
-      let isValidationError = false
       if (file) {
-        isValidationError = !validateFile(file)
-        if (isValidationError) return false
         if (props.onFileUpload) props.onFileUpload(file)
         setFile(file)
         setIsUploaded(true)
-        setError(false)
         return true
       }
       return false
@@ -76,7 +69,8 @@ export const FileUploader: FC<BoxProps & FileUploaderProps> = (p) => {
 
   // copies the button click handler over to the hidden input to trigger the file upload modal
   const handleButtonClick = (event: any) => {
-    blockEvent(event)
+    event.preventDefault()
+    event.stopPropagation()
     // eslint-disable-next-line no-param-reassign
     if (inputRef && inputRef.current) {
       inputRef.current.click()
@@ -106,7 +100,7 @@ export const FileUploader: FC<BoxProps & FileUploaderProps> = (p) => {
     }
   }, [file])
 
-  const renderMainContent = () => {
+  const renderDropzone = () => {
     if (isUploaded) {
       return (
         // @ts-ignore
@@ -123,6 +117,7 @@ export const FileUploader: FC<BoxProps & FileUploaderProps> = (p) => {
                 setFile(null)
               }}
               variant="outline"
+              isFullWidth={size === "sm"}
             >
               Cancel
             </Button>
@@ -157,6 +152,7 @@ export const FileUploader: FC<BoxProps & FileUploaderProps> = (p) => {
             ref={inputRef}
             type="file"
             multiple={false}
+            accept={accept}
           />
         </VStack>
       </Box>
@@ -170,7 +166,8 @@ export const FileUploader: FC<BoxProps & FileUploaderProps> = (p) => {
         <BodyMd>Upload File</BodyMd>
         <BodySm>{headerHelperText}</BodySm>
       </Box>
-      {renderMainContent()}
+      {renderDropzone()}
+      <BodySm mt={2}>{footerHelperText}</BodySm>
     </Box>
   )
 }

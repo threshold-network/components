@@ -23,6 +23,13 @@ export default {
         type: "text",
       },
     },
+    footerHelperText: {
+      description: "Helper text in the bottom left",
+      defaultValue: "This is helper text",
+      control: {
+        type: "text",
+      },
+    },
     size: {
       description: "The size of the uploader",
       defaultValue: "lg",
