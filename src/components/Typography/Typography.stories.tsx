@@ -9,6 +9,7 @@ import {
   H3,
   H4,
   H5,
+  H6,
   LabelLg,
   LabelMd,
   LabelSm,
@@ -22,6 +23,7 @@ const Template: Story = () => {
       <H3>Here is H3</H3>
       <H4>Here is H4</H4>
       <H5>Here is H5</H5>
+      <H6>Here is H6</H6>
       <BodyLg>Body Lg</BodyLg>
       <BodyMd>Body Md</BodyMd>
       <BodySm>Body Sm</BodySm>
