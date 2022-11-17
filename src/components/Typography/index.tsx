@@ -66,6 +66,19 @@ export const H5: FC<TextProps> = (props) => {
   )
 }
 
+export const H6: FC<TextProps> = (props) => {
+  return (
+    <Heading
+      as="h6"
+      fontWeight="500"
+      fontSize="18px"
+      lineHeight="28px"
+      color={useColorModeValue("gray.700", "gray.300")}
+      {...props}
+    />
+  )
+}
+
 export const BodyLg: FC<TextProps> = (props) => {
   return (
     <Text
