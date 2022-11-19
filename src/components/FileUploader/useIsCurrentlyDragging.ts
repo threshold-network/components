@@ -1,6 +1,5 @@
-import { useCallback, useEffect, useState } from "react"
+import { useCallback, useEffect, useRef, useState } from "react"
 
-let draggingCount = 0
 type Params = {
   dragAreaRef: any
 }
@@ -8,20 +7,22 @@ type Params = {
 export default function useIsCurrentlyDragging({
   dragAreaRef,
 }: Params): boolean {
+  const draggingCount = useRef(0)
+
   const [isCurrentlyDragging, setIsCurrentlyDragging] = useState(false)
 
   const handleDragIn = useCallback((ev) => {
     ev.preventDefault()
     ev.stopPropagation()
-    draggingCount++
+    draggingCount.current++
     setIsCurrentlyDragging(true)
   }, [])
 
   const handleDragOut = useCallback((ev) => {
     ev.preventDefault()
     ev.stopPropagation()
-    draggingCount--
-    if (draggingCount > 0) return
+    draggingCount.current--
+    if (draggingCount.current > 0) return
     setIsCurrentlyDragging(false)
   }, [])
 
@@ -35,11 +36,13 @@ export default function useIsCurrentlyDragging({
       const ele = dragAreaRef.current
       ele.addEventListener("dragenter", handleDragIn)
       ele.addEventListener("dragleave", handleDragOut)
+      ele.addEventListener("drop", handleDragOut)
       ele.addEventListener("dragover", handleDrag)
 
       return () => {
         ele.removeEventListener("dragenter", handleDragIn)
         ele.removeEventListener("dragleave", handleDragOut)
+        ele.removeEventListener("drop", handleDragOut)
         ele.removeEventListener("dragover", handleDrag)
       }
     }
