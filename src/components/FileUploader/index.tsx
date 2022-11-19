@@ -86,7 +86,7 @@ export const FileUploader: FC<BoxProps & FileUploaderProps> = (p) => {
         ele.removeEventListener("drop", _handleDrop)
       }
     }
-  }, [_handleDrop, dragAreaRef])
+  }, [_handleDrop])
 
   // watches for a dropped file and sets "isUploaded" value when one is detected
   useEffect(() => {
