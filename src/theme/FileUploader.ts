@@ -1,5 +1,7 @@
-import { mode } from "@chakra-ui/theme-tools"
-import { defineStyle } from "@chakra-ui/styled-system"
+import { mode, anatomy } from "@chakra-ui/theme-tools"
+import { SystemStyleObject } from "@chakra-ui/react"
+
+const parts = anatomy("FileUploader").parts("container", "uploadArea")
 
 const baseStyle = (props: any) => {
   return {
@@ -21,14 +23,14 @@ const baseStyle = (props: any) => {
   }
 }
 
-const sizes = {
-  lg: defineStyle({
+const sizes: Record<string, SystemStyleObject> = {
+  lg: {
     maxW: "600px",
-  }),
+  },
 }
 
 export const FileUploader = {
-  parts: ["container, uploadArea"],
+  parts: parts.keys,
   baseStyle,
   sizes,
   defaultProps: {
