@@ -5,7 +5,7 @@ import {
   Button,
   Image,
   useColorModeValue,
-  useStyleConfig,
+  useMultiStyleConfig,
   VStack,
 } from "@chakra-ui/react"
 import { BodyLg, BodyMd, BodySm, LabelMd } from "../Typography"
@@ -29,7 +29,7 @@ export const FileUploader: FC<BoxProps & FileUploaderProps> = (p) => {
     accept,
     ...props
   } = p
-  const dragAreaRef = useRef<HTMLLabelElement>(null)
+  const dragAreaRef = useRef<HTMLDivElement>(null)
 
   // registers the drag events on the drag area
   const isCurrentlyDragging = useIsCurrentlyDragging({
@@ -42,7 +42,7 @@ export const FileUploader: FC<BoxProps & FileUploaderProps> = (p) => {
 
   const [file, setFile] = useState<File | null>(null)
 
-  const styles = useStyleConfig("FileUploader", {
+  const styles = useMultiStyleConfig("FileUploader", {
     ...p,
     isCurrentlyDragging,
     size,
@@ -100,17 +100,23 @@ export const FileUploader: FC<BoxProps & FileUploaderProps> = (p) => {
     }
   }, [file])
 
-  const renderDropzone = () => {
-    if (isUploaded) {
-      return (
-        // @ts-ignore
-        <Box __css={styles.uploadArea}>
-          <VStack spacing={4}>
-            <Image
-              maxW="80px"
-              src={useColorModeValue(fileUploadLight, fileUploadDark)}
-            />
-            <BodyLg>{file?.name}</BodyLg>
+  return (
+    <Box __css={styles.container}>
+      <Box display="flex" justifyContent="space-between">
+        <BodyMd>Upload File</BodyMd>
+        <BodySm>{headerHelperText}</BodySm>
+      </Box>
+      <Box __css={styles.uploadArea} ref={dragAreaRef}>
+        <VStack spacing={4}>
+          <Image
+            maxW="80px"
+            src={useColorModeValue(fileUploadLight, fileUploadDark)}
+          />
+
+          <BodyLg>
+            {isUploaded ? file?.name : "Drag and drop your file here"}
+          </BodyLg>
+          {isUploaded ? (
             <Button
               onClick={() => {
                 props.onFileUpload(null)
@@ -121,52 +127,28 @@ export const FileUploader: FC<BoxProps & FileUploaderProps> = (p) => {
             >
               Cancel
             </Button>
-          </VStack>
-        </Box>
-      )
-    }
-    return (
-      <Box
-        // @ts-ignore
-        ref={dragAreaRef}
-        // @ts-ignore
-        __css={styles.uploadArea}
-      >
-        <VStack spacing={4}>
-          <Image
-            maxW="80px"
-            src={useColorModeValue(fileUploadLight, fileUploadDark)}
-          />
-          <BodyLg>Drag and drop your file here</BodyLg>
-          <LabelMd>OR</LabelMd>
-          <Button
-            onClick={handleButtonClick}
-            variant="outline"
-            isFullWidth={size === "sm"}
-          >
-            Choose File
-          </Button>
-          <input
-            style={{ visibility: "hidden" }}
-            onChange={_handleDrop}
-            ref={inputRef}
-            type="file"
-            multiple={false}
-            accept={accept}
-          />
+          ) : (
+            <>
+              <LabelMd>OR</LabelMd>
+              <Button
+                onClick={handleButtonClick}
+                variant="outline"
+                isFullWidth={size === "sm"}
+              >
+                Choose File
+              </Button>
+              <input
+                style={{ visibility: "hidden" }}
+                onChange={_handleDrop}
+                ref={inputRef}
+                type="file"
+                multiple={false}
+                accept={accept}
+              />
+            </>
+          )}
         </VStack>
       </Box>
-    )
-  }
-
-  return (
-    // @ts-ignore
-    <Box __css={styles.container}>
-      <Box display="flex" justifyContent="space-between">
-        <BodyMd>Upload File</BodyMd>
-        <BodySm>{headerHelperText}</BodySm>
-      </Box>
-      {renderDropzone()}
       <BodySm mt={2}>{footerHelperText}</BodySm>
     </Box>
   )
