@@ -71,7 +71,6 @@ export const FileUploader: FC<BoxProps & FileUploaderProps> = (p) => {
   const handleButtonClick = (event: any) => {
     event.preventDefault()
     event.stopPropagation()
-    // eslint-disable-next-line no-param-reassign
     if (inputRef && inputRef.current) {
       inputRef.current.click()
     }
