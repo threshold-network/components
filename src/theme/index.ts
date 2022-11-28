@@ -14,6 +14,7 @@ import { fonts } from "./fonts"
 import { BoxLabel } from "./BoxLabel"
 import { colors } from "./utils"
 import { FlowStep } from "./FlowStep"
+import { FileUploader } from "./FileUploader"
 
 export const defaultTheme = {
   fonts,
@@ -31,6 +32,7 @@ export const defaultTheme = {
     Progress,
     FilterTab,
     FilterTabs,
+    FileUploader,
     FlowStep,
   },
 }
