@@ -119,7 +119,7 @@ export const FileUploader: FC<BoxProps & FileUploaderProps> = (p) => {
           {isUploaded ? (
             <Button
               onClick={() => {
-                props.onFileUpload(null)
+                onFileUpload(null)
                 setFile(null)
               }}
               variant="outline"
