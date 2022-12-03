@@ -1,6 +1,13 @@
-import { Button as ChakraButton, ButtonProps } from "@chakra-ui/react"
-import { FC } from "react"
+import {
+  Button as ChakraButton,
+  ButtonProps,
+  forwardRef,
+} from "@chakra-ui/react"
 
-export const Button: FC<ButtonProps & { isSelected?: boolean }> = (props) => {
-  return <ChakraButton {...props} />
+interface IButton extends ButtonProps {
+  isSelected?: boolean
 }
+
+export const Button = forwardRef<IButton, "button">((props, ref) => (
+  <ChakraButton ref={ref} {...props} />
+))
