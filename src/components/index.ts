@@ -1,5 +1,6 @@
 export * from "./AlertBox"
 export * from "./BoxLabel"
+export * from "./Button"
 export * from "./Card"
 export * from "./ChecklistGroup"
 export * from "./ChecklistItem"
