@@ -82,14 +82,17 @@ export const Button = {
       }
     },
     sequence: (props: any) => {
-      const { isSelected } = props
-      const selectedBg = mode("brand.300", "brand.500")
+      const selectedBg = mode("brand.300", "brand.500")(props)
 
       return {
-        color: isSelected ? "white" : mode(undefined, "white")(props),
-        bg: isSelected ? selectedBg : mode("brand.75", "gray.700")(props),
+        color: mode(undefined, "white")(props),
+        backgroundColor: mode("brand.75", "gray.700")(props),
+        _active: {
+          color: "white",
+          backgroundColor: selectedBg,
+        },
         _hover: {
-          bg: selectedBg,
+          backgroundColor: selectedBg,
           color: "white",
         },
       }
