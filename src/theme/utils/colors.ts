@@ -9,6 +9,7 @@ export const colors = {
   },
   brand: {
     50: "#FCF9FF",
+    75: "#F2EDFF",
     100: "#D5C6FF",
     // 200
     300: "#9974FF",

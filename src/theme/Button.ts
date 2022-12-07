@@ -81,5 +81,21 @@ export const Button = {
         },
       }
     },
+    sequence: (props: any) => {
+      const selectedBg = mode("brand.300", "brand.500")(props)
+
+      return {
+        color: mode(undefined, "white")(props),
+        backgroundColor: mode("brand.75", "gray.700")(props),
+        _active: {
+          color: "white",
+          backgroundColor: selectedBg,
+        },
+        _hover: {
+          backgroundColor: selectedBg,
+          color: "white",
+        },
+      }
+    },
   },
 }
