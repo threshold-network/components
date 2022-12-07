@@ -27,6 +27,7 @@ export const FileUploader: FC<BoxProps & FileUploaderProps> = (p) => {
     headerHelperText,
     footerHelperText,
     accept,
+    onFileUpload,
     ...props
   } = p
   const dragAreaRef = useRef<HTMLDivElement>(null)
@@ -58,7 +59,7 @@ export const FileUploader: FC<BoxProps & FileUploaderProps> = (p) => {
     if (files.length > 0) {
       const [file] = files
       if (file) {
-        if (props.onFileUpload) props.onFileUpload(file)
+        if (onFileUpload) onFileUpload(file)
         setFile(file)
         setIsUploaded(true)
         return true
@@ -100,7 +101,7 @@ export const FileUploader: FC<BoxProps & FileUploaderProps> = (p) => {
   }, [file])
 
   return (
-    <Box __css={styles.container}>
+    <Box __css={styles.container} {...props}>
       <Box display="flex" justifyContent="space-between">
         <BodyMd>Upload File</BodyMd>
         <BodySm>{headerHelperText}</BodySm>
@@ -118,7 +119,7 @@ export const FileUploader: FC<BoxProps & FileUploaderProps> = (p) => {
           {isUploaded ? (
             <Button
               onClick={() => {
-                props.onFileUpload(null)
+                onFileUpload(null)
                 setFile(null)
               }}
               variant="outline"
