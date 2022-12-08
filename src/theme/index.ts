@@ -15,6 +15,7 @@ import { BoxLabel } from "./BoxLabel"
 import { colors } from "./utils"
 import { FlowStep } from "./FlowStep"
 import { FileUploader } from "./FileUploader"
+import { Switch } from "./Switch"
 
 export const defaultTheme = {
   fonts,
@@ -34,6 +35,7 @@ export const defaultTheme = {
     FilterTabs,
     FileUploader,
     FlowStep,
+    Switch,
   },
 }
 
