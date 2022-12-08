@@ -4,7 +4,7 @@ const baseStyle = (props: any) => {
     track: {
       _checked: {
         _dark: {
-          bg: `${c}.500`,
+          bg: c === "brand" ? `${c}.500` : `${c}.200`,
         },
       },
     },
