@@ -107,15 +107,16 @@ export const FileUploader: FC<BoxProps & FileUploaderProps> = (p) => {
         <BodySm>{headerHelperText}</BodySm>
       </Box>
       <Box __css={styles.uploadArea} ref={dragAreaRef}>
-        <VStack spacing={4}>
-          <Image
-            maxW="80px"
-            src={useColorModeValue(fileUploadLight, fileUploadDark)}
-          />
+        <Image
+          maxW="80px"
+          mx="auto"
+          src={useColorModeValue(fileUploadLight, fileUploadDark)}
+        />
 
-          <BodyLg>
-            {isUploaded ? file?.name : "Drag and drop your file here"}
-          </BodyLg>
+        <BodyLg isTruncated mt="4" textAlign="center">
+          {isUploaded ? file?.name : "Drag and drop your file here"}
+        </BodyLg>
+        <VStack spacing="4" mt="4">
           {isUploaded ? (
             <Button
               onClick={() => {
