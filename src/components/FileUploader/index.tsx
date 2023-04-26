@@ -112,7 +112,6 @@ export const FileUploader: FC<BoxProps & FileUploaderProps> = (p) => {
           mx="auto"
           src={useColorModeValue(fileUploadLight, fileUploadDark)}
         />
-
         <BodyLg isTruncated mt="4" textAlign="center">
           {isUploaded ? file?.name : "Drag and drop your file here"}
         </BodyLg>
