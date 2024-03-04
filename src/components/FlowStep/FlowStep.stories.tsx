@@ -16,8 +16,8 @@ interface FlowStepStoryProps extends FlowStepProps {
 const JsxChildren = (
   <>
     <BodyMd mb={2}>
-      Provide an ETH address and a BTC Recovery address to generate an unique
-      BTC deposit address. <Link color="purple.500">Read more</Link>
+      Provide an ETH address and a BTC Recovery address to generate a unique BTC
+      deposit address. <Link color="purple.500">Read more</Link>
     </BodyMd>
     <Image maxW="240px" src={DepositBTCAddressCreationImage} />
   </>
@@ -39,7 +39,7 @@ FlowStep.args = {
   preTitle: "Step 1",
   title: "Provide Data",
   children:
-    "Provide an ETH address and a BTC Recovery address to generate an unique BTC deposit address.",
+    "Provide an ETH address and a BTC Recovery address to generate a unique BTC deposit address.",
   isDescriptionHidden: false,
   isDescriptionArrowHidden: false,
 }
